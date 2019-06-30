@@ -4,3 +4,12 @@
 [submodule "blog/themes/docter"]
 	path = blog/themes/docter
 	url = https://github.com/edavidaja/docter.git
+[submodule "blog/themes/parsa"]
+	path = blog/themes/parsa
+	url = https://github.com/themefisher/parsa-hugo-personal-blog-theme.git
+[submodule "blog/themes/twentynineteen"]
+	path = blog/themes/twentynineteen
+	url = https://github.com/jeremybise/twentynineteen-hugo.git
+[submodule "blog/themes/ezhil"]
+	path = blog/themes/ezhil
+	url = https://github.com/vividvilla/ezhil.git

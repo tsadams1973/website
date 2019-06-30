@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on iconic sections</title>
-    <link>https://timblog.z19.web.core.windows.net/post/</link>
-    <description>Recent content in Posts on iconic sections</description>
+    <title>test on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/test/</link>
+    <description>Recent content in test on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Jun 2019 18:51:44 -0400</lastBuildDate>
     
-	<atom:link href="https://timblog.z19.web.core.windows.net/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Welcome to my blog.</title>
-      <link>https://timblog.z19.web.core.windows.net/post/my-first-post/</link>
+      <link>https://timblog.z19.web.core.windows.net/posts/my-first-post/</link>
       <pubDate>Sat, 29 Jun 2019 18:51:44 -0400</pubDate>
       
-      <guid>https://timblog.z19.web.core.windows.net/post/my-first-post/</guid>
+      <guid>https://timblog.z19.web.core.windows.net/posts/my-first-post/</guid>
       <description>Welcome I hope you enjoy the content.</description>
     </item>
     

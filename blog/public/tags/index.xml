@@ -6,9 +6,19 @@
     <description>Recent content in Tags on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 29 Jun 2019 18:51:44 -0400</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>test</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/test/</link>
+      <pubDate>Sat, 29 Jun 2019 18:51:44 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/test/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,19 +1,57 @@
 baseURL = "https://timblog.z19.web.core.windows.net/"
-disablePathToLower = true
 languageCode = "en-us"
 title = "iconic sections"
-theme = "docter"
+theme = "ezhil"
+
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "localhost"
 
 [params]
-  # the name of your project and a link back to the home page
-  home = "iconic sections"
-  logourl = "images/Covatrix_Icon 2.png"
-  logoalt = "covatrix"
+	subtitle = ""
+	# Number of posts to show in recent posts list.
+	recentPostsCount = 10
+	# Content types which are excluded from recent posts and archive page.
+	excludedTypes = ["page"]
+	disableDisqusTypes = ["post","page"]
+	featherIconsCDN = true
 
-  author = "@tsadams1973"
-  author_url= "https://twitter.com/tsadams1973"
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-  # main sections
-  # change the main section to set the directory where the top articles are sourced
-  mainSections = ["post"]
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
 
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/tsadams1973"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/tsadams1973"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
