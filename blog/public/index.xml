@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/</link>
+    <description>Recent content on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Jun 2019 18:51:44 -0400</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to my blog.</title>
+      <link>https://timblog.z19.web.core.windows.net/post/my-first-post/</link>
+      <pubDate>Sat, 29 Jun 2019 18:51:44 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/post/my-first-post/</guid>
+      <description>Welcome I hope you enjoy the content.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://timblog.z19.web.core.windows.net/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/page/about/</guid>
+      <description>Hello. I&amp;rsquo;m Timothy Adams.
+I am a technologist, strategist, and producer of complex, creative knowledge work.</description>
+    </item>
+    
+  </channel>
+</rss>
