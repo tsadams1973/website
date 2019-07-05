@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Host your website on Azure - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Host your website on Azure" />
+<meta property="og:description" content="Using Azure blob storage to host your static website." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-site/" />
+<meta property="article:published_time" content="2019-07-05T11:53:20-04:00"/>
+<meta property="article:modified_time" content="2019-07-05T11:53:20-04:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Host your website on Azure"/>
+<meta name="twitter:description" content="Using Azure blob storage to host your static website."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Host your website on Azure</h1>
+			<div class="meta">Posted at &mdash; Jul 5, 2019</div>
+		</div>
+
+		<div class="markdown">
+			<p>One useful feature of Microsoft Azure that has recently achieved general availability is the ability to host static websites in Azure storage. This blog is an example of such a site, so I thought I might put together a series of posts describing how I built and hosted it. This first installment will cover setting up a simple site in Azure.</p>
+
+<p>I will assume that you already have a Microsoft Azure subscription, but if not you can get started with a free account here:
+<a href="https://azure.microsoft.com/en-us/free/">Microsoft Azure Free Account</a></p>
+
+<hr />
+
+<p>So, now that you have an Azure account set up, log in to your portal. Near the top of the left blade you should see an option to &ldquo;Create a Resource&rdquo;. Click it and you will see something that looks like this:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-site/azure-1_hue441d800e2d8d2fce87fd8ae07e5188c_167316_600x0_resize_box_2.png" width="600" height="417" alt=" Azure screen ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>I will suggest that you search for &ldquo;Storage account&rdquo; in the search box (or you can scroll down the list to find it) and then click &lsquo;Create&rsquo;.</p>
+
+<p>You will be presented with some options. You can set these how you like but for the purposes of this walkthrough. You can accept all of the defaults here. I chose to:</p>
+
+<ul>
+<li><p>Create a new resource group called <em>test-static-site-rg</em>.</p></li>
+
+<li><p>Change the replication to <em>Locally-redundant storage (LRS)</em>.</p></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-site/storage-create-2_hu53153351f5bb786ac208f14320ff2029_117700_600x0_resize_box_2.png" width="600" height="510" alt=" Create Storage 2 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>If your options look like this, then click &ldquo;Create&rdquo; and let&rsquo;s continue.</p>
+
+<hr />
+
+<p>Once your new storage account has finished deploying to Azure, you will be albe to find it in your list of Azure resources.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-site/storage-create-3_hu523de356021fc3684d9c69e4d916d999_170907_600x0_resize_box_2.png" width="600" height="250" alt=" Create Storage 3 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 3
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>If you scroll down the list of options on your storage account you will find one conveniently called &ldquo;Static website&rdquo;. (If you have trouble finding it, simply search for it using the text box near the top of the options.) After choosing it, you will be presented with some text to the effect of <em>&ldquo;Configuring the blob service for static website hosting enables you to host static content in your storage account. Webpages may include static content and client-side scripts. Server-side scripting is not supported in Azure Storage.&rdquo;</em></p>
+
+<p>Once you choose the &ldquo;Enabled&rdquo; option, you will see two new fields. Fill them out as follows:</p>
+
+<ul>
+<li><p>Index document name: <em>index.html</em></p></li>
+
+<li><p>Error document path: <em>404.html</em></p></li>
+</ul>
+
+<p>After you click &ldquo;Save&rdquo; you should see the following screen:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-site/storage-create-4_hu340d48cc5c57072727ac4d4fafc1c234_179683_600x0_resize_box_2.png" width="600" height="308" alt=" Create Storage 4 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 4
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>After saving, Azure automatically created a <em>$web</em> container for you. The next step is to create and upload the <em>index.html</em> and <em>404.html</em> files we referenced earlier. You can either click on the <em>$web</em> link on the &ldquo;Static website&rdquo; properties page or find the &ldquo;Blobs&rdquo; option in the left menu and the click the <em>$web</em> link for the continer you find there. Either way, you end up here:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-site/storage-create-5_hue51a8e6b4ec758d5939830fcd8a54893_137988_600x0_resize_box_2.png" width="600" height="362" alt=" Create Storage 5 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 5
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<hr />
+
+<p>Creating a website is a little ouf-of-scope for this post, although I plan to cover that in a follow-up. But, we need something to finish off this tutorial. So, use any editor you like and make two files on your local computer.</p>
+
+<p><strong>index.html</strong></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World.&lt;/h1&gt;
+        &lt;p&gt;
+            My static website.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre></div>
+<p><strong>404.html</strong></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;File Not Found.&lt;/h1&gt;
+        &lt;p&gt;
+            This page was not found.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre></div>
+<p>Upload each of those to the <em>$web</em> container using the &lsquo;Upload&rsquo; feature. Once the files are uploaded, navigate to the &ldquo;Primary endpoint&rdquo; for your site. The endpoint can be found under the &ldquo;Static website&rdquo; properties on the screen we saw in <strong>Figure 4</strong>. The endpoint will be in the format: &lt;<em>resource-name</em>&gt;.&lt;<em>zone</em>&gt;.web.core.windows.net.</p>
+
+<p>You should see the simple <em>Hello World</em> page we uploaded.</p>
+
+<hr />
+
+<p>That&rsquo;s it. You are now ready to add more content and style to your page. In a future post I will cover using Visucal Studio Code and a static site generator to develop a more interesting website.</p>
+
+<p>Thanks.</p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

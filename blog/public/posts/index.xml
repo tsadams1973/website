@@ -6,18 +6,19 @@
     <description>Recent content in Posts on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jun 2019 18:51:44 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jul 2019 11:53:20 -0400</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Welcome to my blog.</title>
-      <link>https://timblog.z19.web.core.windows.net/posts/my-first-post/</link>
-      <pubDate>Sat, 29 Jun 2019 18:51:44 -0400</pubDate>
+      <title>Host your website on Azure</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-site/</link>
+      <pubDate>Fri, 05 Jul 2019 11:53:20 -0400</pubDate>
       
-      <guid>https://timblog.z19.web.core.windows.net/posts/my-first-post/</guid>
-      <description>Welcome I hope you enjoy the content.</description>
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-site/</guid>
+      <description>One useful feature of Microsoft Azure that has recently achieved general availability is the ability to host static websites in Azure storage. This blog is an example of such a site, so I thought I might put together a series of posts describing how I built and hosted it. This first installment will cover setting up a simple site in Azure.
+I will assume that you already have a Microsoft Azure subscription, but if not you can get started with a free account here: Microsoft Azure Free Account</description>
     </item>
     
   </channel>

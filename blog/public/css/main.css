@@ -35,12 +35,16 @@ hr {
     padding: 0
 }
 
-/*
-audio,canvas,img,video {
+audio,canvas,video {
     width: 100%;
-    vertical-align: middle
+    vertical-align: middle;
 }
-*/
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 fieldset {
     border: 0;
