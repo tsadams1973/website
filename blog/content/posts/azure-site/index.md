@@ -1,5 +1,5 @@
 ---
-title: "Host your website on Azure"
+title: "How to host your website on Azure"
 date: 2019-07-05T11:53:20-04:00
 draft: false
 type: "post"
@@ -88,6 +88,6 @@ You should see the simple *Hello World* page we uploaded.
 
 ---
 
-That's it. You are now ready to add more content and style to your page. In a future post I will cover using Visucal Studio Code and a static site generator to develop a more interesting website.
+That's it. You are now ready to add more content and style to your page. In a future post I will cover using Visual Studio Code and a static site generator to develop a more interesting website.
 
 Thanks.

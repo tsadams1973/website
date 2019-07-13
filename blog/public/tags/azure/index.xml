@@ -6,13 +6,24 @@
     <description>Recent content in azure on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Jul 2019 11:53:20 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2019 22:29:16 -0400</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Host your website on Azure</title>
+      <title>How to use a custom domain with your Azure static site</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-cdn/</link>
+      <pubDate>Fri, 12 Jul 2019 22:29:16 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-cdn/</guid>
+      <description>In a previous post we looked at how to host your static site in azure blog storage. We stopped with a simple &amp;lsquo;hello world&amp;rsquo; page.
+Unfortunately the default address for you site will be in the somewhat undesireable format ..web.core.windows.net. For this blog that is: https://timblog.z19.web.core.windows.net/. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.
+We will use an Azure CDN to configure our custom domain endpoint.</description>
+    </item>
+    
+    <item>
+      <title>How to host your website on Azure</title>
       <link>https://timblog.z19.web.core.windows.net/posts/azure-site/</link>
       <pubDate>Fri, 05 Jul 2019 11:53:20 -0400</pubDate>
       

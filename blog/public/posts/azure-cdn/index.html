@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>How to use a custom domain with your Azure static site - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="How to use a custom domain with your Azure static site" />
+<meta property="og:description" content="Using the Azure CDN Profile to map a custom domain to your site with https." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-cdn/" />
+<meta property="article:published_time" content="2019-07-12T22:29:16-04:00"/>
+<meta property="article:modified_time" content="2019-07-12T22:29:16-04:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to use a custom domain with your Azure static site"/>
+<meta name="twitter:description" content="Using the Azure CDN Profile to map a custom domain to your site with https."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">How to use a custom domain with your Azure static site</h1>
+			<div class="meta">Posted at &mdash; Jul 12, 2019</div>
+		</div>
+
+		<div class="markdown">
+			<p>In a previous <a href="../azure-site/">post</a> we looked at how to host your static site in azure blog storage. We stopped with a simple &lsquo;hello world&rsquo; page.</p>
+
+<p>Unfortunately the default address for you site will be in the somewhat undesireable format <resource-name>.<zone>.web.core.windows.net. For this blog that is: <a href="https://timblog.z19.web.core.windows.net/">https://timblog.z19.web.core.windows.net/</a>. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.</p>
+
+<p>We will use an Azure CDN to configure our custom domain endpoint. We will use this option because it will allow us to map our domain to our Azure site, set up a custom SSL certificate for our site, and create a rewrite rule to redirect our traffic to https.</p>
+
+<p>So, let&rsquo;s get started.</p>
+
+<hr />
+
+<p>First we need to login to our Azure portal and navigate to the storage resource we created to host our site. Once you do, scroll down to the &ldquo;Blob service&rdquo; section and choose &ldquo;Azure CDN&rdquo;. It should look something like this: 
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-1_hu0c98897bea177eccdedc9a3ad48bc68c_238023_800x0_resize_box_2.png" width="800" height="664" alt=" Azure CDN 1 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>We will choose the &ldquo;Create new&rdquo; option and give our CDN profile a name. For pricing tier we will need to choose &ldquo;Premium Verizon&rdquo; because that is the only one that currently supports the rewrite rules we need. We will choose a name for our CDN endpoint, and leave the origin hostname as the default provided which should be in the format <service-host-name>.blob.core.windows.net.</p>
+
+<p>Once those options are set, we will click &ldquo;Create&rdquo; and wait for our new endpoint to propogate.</p>
+
+<hr />
+
+<p>This should create two resources.
+- A CDN Profile
+- An endpoint</p>
+
+<p>If we navigate to the endpoint from our Azure resources list we should see something like this:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-2_hu47a4d8c9025b4cf4c519445b90391ae2_268131_800x0_resize_box_2.png" width="800" height="433" alt=" Azure CDN 2 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>To finish setting up our site, we want to choose the &ldquo;Origin&rdquo; option under setttings. We will see a screen like this:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-3_hu7111854552d511c44826c8e6d1ca07ea_196907_800x0_resize_box_2.png" width="800" height="587" alt=" Azure CDN 3 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 3
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>We want to change &ldquo;Origin type&rdquo; to custom, and enter the domain for our static site in the &ldquo;Origin hostname&rdquo; field (which should propogate that name to the &ldquo;Origin host header&rdquo; field automatically.) Save your work.</p>
+
+<p>The documentation says that it might take up to 30 minutes for the changes to propogate, but in my experience it might take longer. Stay the course. You can check your endpoint hostname. Eventually it will redirect to your static site.</p>
+
+<hr />
+
+<p>Once you are satisfied that your CDN is redirecting to your static site, then we can look to adding a custom domain.</p>
+
+<p>To do this, you need to go to your domain host and add a CNAME record for the domain (or subdomain) that you want to use. My domain is hosted by InMotion, and looks like this:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-4_huc12a1d50619408314ba51785c8036af6_117916_800x0_resize_box_2.png" width="800" height="160" alt=" CNAME mapping ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 4
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>Once you&rsquo;ve set up your CNAME record, you can navigate to your endpoint in your Azure portal and hit the &ldquo;+ Custom Domain&rdquo; link. (See Figure 2 if you need a reference.) This will pop up an option to add a &ldquo;Custom hostname&rdquo; for your &ldquo;Endpoint hostname&rdquo;. Simply add the custom domain for which you created the CNAME record and click &ldquo;Add&rdquo;.
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-5_hu7450c69ae9ef4ce6fe38aa375841e99f_69071_800x0_resize_box_2.png" width="800" height="583" alt=" Custome domain mapping ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 5
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<hr />
+
+<p>Once Azure is finished creating the custom domain you will see it listed on your endpoint page overview page but the column &ldquo;Custom HTTPS&rdquo; will be set to <em>Disabled</em>. Since we want to enable https, click on the custom domain to bring up its properties screen.</p>
+
+<p>We will set:
+- &ldquo;Custom domain HTTPS&rdquo; to <em>On</em>
+- &ldquo;Certificate management type&rdquo; to <em>CDN managed</em></p>
+
+<p>Click &ldquo;Save&rdquo;.
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-6_hubd38fb92cde2a9b1d29d07571fd65ddb_232298_800x0_resize_box_2.png" width="800" height="683" alt=" SSL ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 6
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+This part can take a long time. Read: hours or up to a day. So, be patient. Eventually this process will complete, and your certificate will be provisioned. At this point, your custom domain should be mapped to your site with SSL. You can now safely navigate to it with https.</p>
+
+<p><em>Note:</em> If this takes longer than 24 hours, you might need to do some troubleshooting.</p>
+
+<hr />
+
+<p>Last step: Now navigate to your site using https, but if you try to navigate to it using http, you will get rejected with a warning similar to:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-7_hu4fd276d8dabf6b5023e399ce75ed2492_66222_800x0_resize_box_2.png" width="800" height="177" alt=" Error ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 7
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+This is a less than ideal user experience, so we want to fix it. Fortunately with the &ldquo;Premium Verizon&rdquo; pricing tier we can redirect http traffic to https. We will do this by creating a rule.</p>
+
+<p>First you need to navigate out of your &ldquo;Endpoint&rdquo; to the &ldquo;CDN Profile&rdquo; resource that you set up originally to start the process. Once there you will see a &ldquo;Manage&rdquo; option at the top of the overview page that you want to select. 
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-8_hude34b63894dc86a923965ed7e59a75b7_197332_800x0_resize_box_2.png" width="800" height="516" alt=" CDN Profile ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 8
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>This should take you to a new page where you can choose the &ldquo;Rules Engine&rdquo; option under the &ldquo;HTTP Large&rdquo; menu item.
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-9_hue68b2531f3be739a84f6fe5e370d1b80_110221_800x0_resize_box_2.png" width="800" height="489" alt=" Rules Engine ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 9
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>Name your rule &ldquo;Redirect http to https&rdquo;. Configure it by setting &ldquo;If&rdquo; &ldquo;Request Scheme&rdquo; &ldquo;HTTP&rdquo;, then &ldquo;URL Redirect&rdquo; &ldquo;origin-path/(.*)&rdquo; to Destination &ldquo;https://%{host}/$1&rdquo;.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-10_hu89a14a4dd25c8df9548c9fa10330c9e0_66476_800x0_resize_box_2.png" width="800" height="108" alt=" Rule ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 10
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Hit &ldquo;Add&rdquo;. Give Azure some time to propogate your chages, and that is it. You should be done.</p>
+
+<hr />
+
+<p>Congratulations. Now you should have your own static website running in Azure blob storage, and you should also have it mapped to the custom domain of your choice, with an SSL certificate, and some rewrite rules to provide a pleasant user experience.</p>
+
+<p>In a future post I will cover using Visual Studio Code with [hugo]() to build a more interesting and professional site.</p>
+
+<p>Thanks!</p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
