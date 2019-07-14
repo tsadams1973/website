@@ -10,7 +10,7 @@ pygmentscodefencesguesssyntax = true
 disqusShortname = "localhost"
 
 [params]
-	subtitle = ""
+	subtitle = "a slice of life"
 	# Number of posts to show in recent posts list.
 	recentPostsCount = 10
 	# Content types which are excluded from recent posts and archive page.
