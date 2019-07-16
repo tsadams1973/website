@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>How to build your static site with Hugo - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="How to build your static site with Hugo" />
+<meta property="og:description" content="Using Hugo to create a static site hosted on Azure storage" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-hugo/" />
+<meta property="article:published_time" content="2019-07-15T20:38:49-04:00"/>
+<meta property="article:modified_time" content="2019-07-15T20:38:49-04:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to build your static site with Hugo"/>
+<meta name="twitter:description" content="Using Hugo to create a static site hosted on Azure storage"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2>a slice of life</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">How to build your static site with Hugo</h1>
+			<div class="meta">Posted on Jul 15, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>In a pair of previous posts I described how to <a href="../azure-site">host a static site in Azure storage</a> and also how to <a href="../azure-cdn">use a CDN to map a custom domain to your site with https</a>. For each of those examples I used a simple &lsquo;hello world&rsquo; html page, but in the real world we are going to want more out of our site. In my research I came across <a href="https://gohugo.io/">Hugo</a> and decided to give it a go.</p>
+
+<hr />
+
+<h3 id="what-is-hugo">What is Hugo?</h3>
+
+<p>Hugo is an open source static site generator. If you really want to be sold on it, go browse <a href="https://gohugo.io/about/">their docs</a> to learn everything you might want to know. As an end-user, Hugo feels great because:</p>
+
+<ul>
+<li>It uses simple, Go-based templating engine to layout your site.</li>
+<li>The number of templates available to download and use means you can get started quickly.</li>
+<li>You write all of your content in markdown.</li>
+<li>Hugo has shortcodes to add flexibility where markdown is not sufficient.</li>
+<li>Its CLI makes it easy to run your site local and generate content to deploy to production.</li>
+</ul>
+
+<p>If you are interested in giving it a try, then read on.</p>
+
+<hr />
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>We will be working locally, so we need to set up our local environment. Hopefully this part is as easy as <em>one</em>, <em>two</em>, <em>three</em>.</p>
+
+<h4 id="code-editor">Code Editor</h4>
+
+<p>Since we will be working on our site locally and deploying it to Azure, we will need a code editor. I prefer to work with <a href="https://code.visualstudio.com/">Visual Studio Code</a>, so we will use that for this example.</p>
+
+<p>Step <em>one</em> is to <a href="https://code.visualstudio.com/docs/setup/setup-overview">download and install VS Code</a>.</p>
+
+<p>There are a nunber of useful <a href="https://marketplace.visualstudio.com/vscode">extensions</a> you can install for VS Code, but the one we will use for this example is the Azure Storage extension, which will allow us to update our static site on Azure right from our editor.</p>
+
+<p>Step <em>two</em> is to <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">download and install the Azure Storage extension</a>.</p>
+
+<h4 id="hugo">Hugo</h4>
+
+<p>Since we will be building out our site with Hugo, we will need to install it first.</p>
+
+<p>Step <em>three</em> is to follow the <a href="https://gohugo.io/getting-started/installing">instructions here to install Hugo</a> and then come back.</p>
+
+<hr />
+
+<h3 id="making-a-site-with-hugo">Making a site with Hugo</h3>
+
+<p>Now we should be ready to build our our site with Hugo. I recommend opening VS Code and bringing up the terminal (either View -&gt; Terminal, or <code>ctrl-`</code>). To confirm you have Hugo installed you can run <code>hugo version</code>. With Hugo installed, you can get started with the command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">hugo new site staticsite</pre></div>
+<p>This will create a new Hugo site in a folder named staticsite. From here we want to navigate to that folder and open it in our editor:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">cd staticsite
+code .</pre></div>
+<p>This will open a new instance of VS Code. It should look a little like this:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-1_hua6801dd19d87efe4a2843b77d2805366_215033_800x0_resize_box_2.png" width="800" height="424" alt=" vs code hugo project ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+You can see the structure of our Hugo site in the explorer window:</p>
+
+<ul>
+<li>archetypes</li>
+<li>content</li>
+<li>data</li>
+<li>layouts</li>
+<li>static</li>
+<li>themes</li>
+<li>config.toml</li>
+</ul>
+
+<p>Although the scaffolding for the site is there, it doesn&rsquo;t do anything yet. It lacks any implementation. While we could build it ourselves, we will take the easier route for the time being and use an existing <a href="https://themes.gohugo.io/">theme</a>.</p>
+
+<hr />
+
+<h3 id="hallo">Hallo</h3>
+
+<p>For our example, we will use the <a href="https://themes.gohugo.io/hallo-hugo/">Hallo theme</a> because it is simple and has an MIT license. To install it, first make sure you are in the <code>staticsite</code> directory we created earlier. Then run the following from the terminal in VS Code:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">git clone  https://github.com/EmielH/hallo-hugo.git themes/hallo</pre></div>
+<p>You should now see a &ldquo;hallo&rdquo; folder under the themes folder. Open the &ldquo;config.toml&rdquo; file in your project and add the line <code>theme = &quot;hallo&quot;</code>. Your project should look like:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-2_hucd5c3750b419e285330e2287f169fe97_166416_800x0_resize_box_2.png" width="800" height="608" alt=" vs code hallo theme ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Run the command <code>hugo server</code> from the terminal to launch your project locally. Navigate to the url provided for the web server to see your page:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-3_hu833d5a36a7ebe632031c038f458b8c69_613868_800x0_resize_box_2.png" width="800" height="531" alt=" hallo theme ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 3
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<hr />
+
+<h3 id="update-your-site">Update your site</h3>
+
+<p>We can personalize our new site before deploying it. We will update the picture, the name, the color scheme, and the introduction text.</p>
+
+<ul>
+<li>To update the picture, create an &ldquo;images&rdquo; folder under the &ldquo;static&rdquo; folder of your site and upload the picture of our choice to it as &ldquo;portrait.jpg&rdquo;.</li>
+
+<li><p>To update the name, and color scheme, add the following to your config.toml file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Author]
+name = &#34;&lt;your name&gt;&#34;
+
+[params.colors]
+background = &#34;#4463AE&#34;
+foreground = &#34;#C8D6E9&#34;</pre></div></li>
+
+<li><p>To update the introduction text, create a folder named &ldquo;partials&rdquo; under the &ldquo;layouts&rdquo; folder. Add a file called &ldquo;introduction.html&rdquo; that contains your introduction text to that folder.</p></li>
+</ul>
+
+<p>If your site is looking like this you are on the right track:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-4_huc61027dc2b218b9443dc68eb2afbbce1_172942_800x0_resize_box_2.png" width="800" height="545" alt=" hallo updates ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 4
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>If you have kept your site running locally, check it out. If you stopped it, the simply run <code>hugo server</code> again to see the result:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-5_hu473d49ee2789a49d4ffc278a17fe4523_524540_800x0_resize_box_2.png" width="800" height="549" alt=" hallo updates ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 5
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<hr />
+
+<h3 id="publish-to-azure">Publish to Azure</h3>
+
+<p>Now that we have our site looking the way we want, all that is left it so publish it to Azure. This process is quick and easy.</p>
+
+<h4 id="step-one-build-your-hugo-site">Step One: Build your Hugo Site</h4>
+
+<p>First we need to build our proud Hugo site. From our the root &ldquo;staticsite&rdquo; folder we have been working on navigate to the terminal in VS Code and run:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">hugo</pre></div>
+<p>This command will run very fast. If you look closely, you will notice a new folder named &ldquo;public&rdquo; in your project. This project contains the static version of your Hugo site.</p>
+
+<h3 id="step-two-deploy-to-static-website">Step Two: Deploy to Static Website&hellip;</h3>
+
+<p>If you right click on the new &ldquo;public&rdquo; folder in the Explorer pane of VS Code, you will see an option to &ldquo;Deploy to Static Website&hellip;&rdquo;.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-hugo/azure-hugo-6_hu0a545a940e326512dac9ec3f9c3aab4c_311993_800x0_resize_box_2.png" width="800" height="680" alt=" deploy ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 6
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>This option was included with the &ldquo;Azure Storage&rdquo; extension we installed earlier. After you click it you will see a follow-up dialog to pick a Storage Account. Choose the one you created in our previous walkthrough. You will liekly be promted to delete the files that exist in your site and deply the new ones. Choose yes and wait for your site to be copied.</p>
+
+<hr />
+
+<p>That&rsquo;s it. You should now be able to see your new Hugo site hosted on Azure. If you mapped your site to a <a href="../azure-cdn">custom domain using a CDN</a>, you should now also see it at that address. (If it doesn&rsquo;t show up right away you might want to purge your CDN endpoint.)</p>
+
+<p>There is a lot more you can do with Hugo, but I hope this has helped you get started.</p>
+
+<p>Thanks!</p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
