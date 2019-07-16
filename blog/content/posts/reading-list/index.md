@@ -1,7 +1,7 @@
 ---
 title: "Books one might read"
 date: 2019-07-12T23:13:26-04:00
-draft: false
+draft: true
 type: "post"
 description: "A running list."
 tags: ["books", "articles", "reading"]

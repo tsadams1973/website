@@ -3,32 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://timblog.z19.web.core.windows.net/posts/azure-cdn/</loc>
-    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-hugo/</loc>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
-    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
-    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
-    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/hugo/</loc>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/</loc>
-    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
+    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-cdn/</loc>
+    <lastmod>2019-07-12T22:29:16-04:00</lastmod>
   </url>
   
   <url>

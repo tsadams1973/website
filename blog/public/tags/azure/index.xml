@@ -6,10 +6,19 @@
     <description>Recent content in azure on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jul 2019 22:29:16 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 20:38:49 -0400</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to build your static site with Hugo</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-hugo/</link>
+      <pubDate>Mon, 15 Jul 2019 20:38:49 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-hugo/</guid>
+      <description>In a pair of previous posts I described how to host a static site in Azure storage and also how to use a CDN to map a custom domain to your site with https. For each of those examples I used a simple &amp;lsquo;hello world&amp;rsquo; html page, but in the real world we are going to want more out of our site. In my research I came across Hugo and decided to give it a go.</description>
+    </item>
     
     <item>
       <title>How to use a custom domain with your Azure static site</title>
