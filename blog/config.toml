@@ -10,7 +10,15 @@ pygmentscodefencesguesssyntax = true
 disqusShortname = "localhost"
 
 [params]
-	subtitle = "a slice of life"
+	subtitle = "discord and hyperbole"
+	# "a ray of hyperbole"
+	# "discord and hyperbole"
+	# "obtuse discourse"
+	# "a point of discourse"
+	# "a slice of hyperbole"
+	# "parabolic"
+	# "circular reseasoning"
+	# "elliptical"
 	# Number of posts to show in recent posts list.
 	recentPostsCount = 10
 	# Content types which are excluded from recent posts and archive page.
