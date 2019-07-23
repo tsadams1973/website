@@ -6,10 +6,46 @@
     <description>Recent content in Tags on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2019 20:38:49 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>api</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/api/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swagger</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/swagger/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/swagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swashbuckle</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/swashbuckle/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/swashbuckle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>versioning</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/versioning/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/versioning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>azure</title>

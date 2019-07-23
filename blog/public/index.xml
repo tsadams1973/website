@@ -6,10 +6,20 @@
     <description>Recent content on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2019 20:38:49 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>API Versioning in ASP.NET Core</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/api-ver/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/api-ver/</guid>
+      <description>Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft&amp;rsquo;s aspnet-api-versioning library to learn how it provides an easy way to add different verioning semantics to your API project.
+These libraries are really easy to get started with and there are a handful of useful samples here.</description>
+    </item>
     
     <item>
       <title>How to build your static site with Hugo</title>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/api/</link>
+    <description>Recent content in api on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>API Versioning in ASP.NET Core</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/api-ver/</link>
+      <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/api-ver/</guid>
+      <description>Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft&amp;rsquo;s aspnet-api-versioning library to learn how it provides an easy way to add different verioning semantics to your API project.
+These libraries are really easy to get started with and there are a handful of useful samples here.</description>
+    </item>
+    
+  </channel>
+</rss>

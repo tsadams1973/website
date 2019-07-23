@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>API Versioning in ASP.NET Core - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="API Versioning in ASP.NET Core" />
+<meta property="og:description" content="Using Microsoft aspnet-api-versioning to add API versioning semantics to your ASP.NET Core API" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/api-ver/" />
+<meta property="article:published_time" content="2019-07-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-21T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="API Versioning in ASP.NET Core"/>
+<meta name="twitter:description" content="Using Microsoft aspnet-api-versioning to add API versioning semantics to your ASP.NET Core API"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+	<link rel="shortcut icon" href="/images/Covatrix_Icon.ico">
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2>discord and hyperbole</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">API Versioning in ASP.NET Core</h1>
+			<div class="meta">Posted on Jul 21, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft&rsquo;s <a href="https://github.com/microsoft/aspnet-api-versioning">aspnet-api-versioning</a> library to learn how it provides an easy way to add different verioning semantics to your API project.</p>
+
+<p>These libraries are really easy to get started with and there are a handful of useful <a href="https://github.com/microsoft/aspnet-api-versioning/tree/master/samples">samples here</a>.</p>
+
+<hr />
+
+<h4 id="getting-started">Getting Started</h4>
+
+<p>First thing we will need is a new ASP.NET Core Web API project. We will create one with the CLI. Open your favorite terminal and run the following commands:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">mkdir api-ver
+cd api-ver
+dotnet <span style="color:#00f">new</span> webapi
+</code></pre></div>
+<p>These will create a new API project named api-ver in the current directory. To open it with Visaul Studio Code, simply type <code>code .</code>.</p>
+
+<p>You should be here:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-1_hu3455cfb8fe6c40d8d783ea405e8a62db_344229_800x0_resize_box_2.png" width="800" height="588" alt=" VS Code ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>To get our dependencies out of the way upfront, go ahead and the following packages to your project. My practice is to add packages via the CLI from the terminal in VS Code, like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">dotnet <span style="color:#00f">add</span> package Swashbuckle.AspNetCore
+dotnet <span style="color:#00f">add</span> package Microsoft.AspNetCore.Mvc.Versioning --version 3.1.3
+dotnet <span style="color:#00f">add</span> package Microsoft.Extensions.PlatformAbstractions --version 1.1.0
+dotnet <span style="color:#00f">add</span> package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer --version 3.2.0
+</code></pre></div>
+<hr />
+
+<h4 id="adding-swagger-to-your-api">Adding Swagger to your API</h4>
+
+<p>Swashbuckle provides swagger tooling for ASP.NET Core APIs. We will be using the Swagger UI for this post, so let&rsquo;s add that to our API project before we do anything else.</p>
+
+<p>First we need to register the Swagger generator service. In the ConfigureServices method of our StartUp.cs file add the following:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddSwaggerGen(c =&gt;
+{
+    c.SwaggerDoc(<span style="color:#a31515">&#34;v1&#34;</span>, <span style="color:#00f">new</span> Info { Title = <span style="color:#a31515">&#34;Test API Versioning&#34;</span>, Version = <span style="color:#a31515">&#34;v1&#34;</span> });
+});
+</code></pre></div>
+<p>You will need to add a <code>using Swashbuckle.AspNetCore.Swagger;</code> to make this work.</p>
+
+<p><em>Note:</em> SwaggerGen is the service that will generate Swagger documents directly from our endpoints.</p>
+
+<p>Ofcourse, we also have to add the middleware to expose the Swagger endoints to our StartUp.cs. While we&rsquo;re at it we will also add the middleware to expose the API documentation. To do all of this we will add these lines to the Configure method of our Startup.cs file <em>after</em> <code>app.UseMvc()</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">app.UseSwagger();
+
+app.UseSwaggerUI(c =&gt;
+{
+    c.SwaggerEndpoint(<span style="color:#a31515">&#34;/swagger/v1/swagger.json&#34;</span>, <span style="color:#a31515">&#34;My Test API V1&#34;</span>);
+});
+</code></pre></div>
+<p>Now, if we run our project (<code>dotnet run</code> from the VS Code terminal), we will be able to see our Swagger UI at &ldquo;<em>application-url/swagger</em>&rdquo;. If you haven&rsquo;t made any other changes to your project that will likely be <code>https://localhost:5001/swagger</code>. You should see something like this:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-2_hu72fd101e421ad9a2097504c522f16f79_122726_800x0_resize_box_2.png" width="800" height="822" alt=" swagger ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<hr />
+
+<h4 id="wasn-t-this-supposed-to-be-about-versioning">Wasn&rsquo;t this supposed to be about versioning?</h4>
+
+<p>Right. Back to the versioning. Our current API lacks a coherent versioning strategy, so let&rsquo;s fix that. Fortunately, we already added the needed depenedincies earlier, so to start, we will add a new versioning service to our ConfigureServices method in our StartUp.cs class.</p>
+
+<p>Add the following after <code>services.AddMvc()</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"> services.AddApiVersioning();
+</code></pre></div>
+<p>Now, navigate to our &ldquo;ValuesController&rdquo;. We will add URL based versioning, so first we will replace the default route:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">[Route(&#34;api/[controller]<span style="color:#a31515">&#34;)]
+</span></code></pre></div>
+<p>With the new route:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">[Route(&#34;api/v{version:apiVersion}/[controller]<span style="color:#a31515">&#34;)]
+</span></code></pre></div>
+<p>And since we want to declare a version for our API, we also need to add the following attribute above that route on our controller:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">[ApiVersion(&#34;1.0&#34;)]
+</code></pre></div>
+<p>Now we should have a new, versioned resource in our API. Go to the terminal, type <code>dotnet run</code> and launch your broser of choice. Navigate to your swagger endpoint (<code>https://localhost:5001/swagger</code>) and let&rsquo;s see.</p>
+
+<p>You will see something like this:
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-3_hu0285a7c73205e5c3008513bc2628db12_137856_800x0_resize_box_2.png" width="800" height="831" alt=" swagger ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 3
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+</p>
+
+<p>You will notice that the endpoints look wrong: <code>/api/v{version}/Values</code> doesn&rsquo;t seem right. But if we navigate to our &ldquo;GET&rdquo; endpoint and choose &ldquo;Try it out&rdquo;, we will notice we are given a textbox to choose our verion. If we enter a &ldquo;1&rdquo; in that box and click &ldquo;Execute&rdquo;, we will see that our API runs successfully at the expected <code>https://localhost:5001/api/v1/Values</code> endpoint:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-4_hubff4624cee4a50d0e88b009a853b2938_130284_800x0_resize_box_2.png" width="800" height="691" alt=" swagger ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 4
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>If you want to confirm that it doesn&rsquo;t work for any other versions, please feel free to experiment with that.</p>
+
+<p>So, while it seems our versioning is working, clearly our swagger is not.</p>
+
+<hr />
+
+<h4 id="fixing-up-swagger">Fixing up Swagger</h4>
+
+<p>To get our SwaggerUI to accurately reflect the state of our API, we will borrow heavily from this <a href="https://github.com/microsoft/aspnet-api-versioning/tree/master/samples/aspnetcore/SwaggerSample">sample</a>.</p>
+
+<p>First we add two helper classes to our project:</p>
+
+<ul>
+<li><p><em>ConfigureSwaggerOptions.cs</em></p></li>
+
+<li><p><em>SwaggerDefaultValues.cs</em></p></li>
+</ul>
+
+<p><strong>ConfigureSwaggerOptions.cs</strong></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#00f">using</span> Microsoft.AspNetCore.Mvc.ApiExplorer;
+<span style="color:#00f">using</span> Microsoft.Extensions.DependencyInjection;
+<span style="color:#00f">using</span> Microsoft.Extensions.Options;
+<span style="color:#00f">using</span> Swashbuckle.AspNetCore.Swagger;
+<span style="color:#00f">using</span> Swashbuckle.AspNetCore.SwaggerGen;
+
+<span style="color:#00f">namespace</span> api_ver
+{
+    <span style="color:#008000">/// &lt;summary&gt;
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// Configures the Swagger generation options.
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// &lt;/summary&gt;
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// &lt;remarks&gt;This allows API versioning to define a Swagger document per API version after the
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// &lt;see cref=&#34;IApiVersionDescriptionProvider&#34;/&gt; service has been resolved from the service container.&lt;/remarks&gt;
+</span><span style="color:#008000"></span>    <span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">ConfigureSwaggerOptions</span> : IConfigureOptions&lt;SwaggerGenOptions&gt;
+    {
+        <span style="color:#00f">readonly</span> IApiVersionDescriptionProvider provider;
+
+        <span style="color:#008000">/// &lt;summary&gt;
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// Initializes a new instance of the &lt;see cref=&#34;ConfigureSwaggerOptions&#34;/&gt; class.
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// &lt;/summary&gt;
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// &lt;param name=&#34;provider&#34;&gt;The &lt;see cref=&#34;IApiVersionDescriptionProvider&#34;&gt;provider&lt;/see&gt; used to generate Swagger documents.&lt;/param&gt;
+</span><span style="color:#008000"></span>        <span style="color:#00f">public</span> ConfigureSwaggerOptions( IApiVersionDescriptionProvider provider ) =&gt; <span style="color:#00f">this</span>.provider = provider;
+
+        <span style="color:#008000">/// &lt;inheritdoc /&gt;
+</span><span style="color:#008000"></span>        <span style="color:#00f">public</span> <span style="color:#00f">void</span> Configure( SwaggerGenOptions options )
+        {
+            <span style="color:#008000">// add a swagger document for each discovered API version
+</span><span style="color:#008000"></span>            <span style="color:#008000">// note: you might choose to skip or document deprecated API versions differently
+</span><span style="color:#008000"></span>            <span style="color:#00f">foreach</span> ( <span style="color:#2b91af">var</span> description <span style="color:#00f">in</span> provider.ApiVersionDescriptions )
+            {
+                options.SwaggerDoc( description.GroupName, CreateInfoForApiVersion( description ) );
+            }
+        }
+
+        <span style="color:#00f">static</span> Info CreateInfoForApiVersion( ApiVersionDescription description )
+        {
+            <span style="color:#2b91af">var</span> info = <span style="color:#00f">new</span> Info()
+            {
+                Title = <span style="color:#a31515">&#34;Test API Versioning&#34;</span>,
+                Version = description.ApiVersion.ToString(),
+            };
+
+            <span style="color:#00f">if</span> ( description.IsDeprecated )
+            {
+                info.Description += <span style="color:#a31515">&#34; This API version has been deprecated.&#34;</span>;
+            }
+
+            <span style="color:#00f">return</span> info;
+        }
+    }
+}
+</code></pre></div>
+<p><strong>SwaggerDefaultValues.cs</strong></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#00f">using</span> Microsoft.AspNetCore.Mvc.ApiExplorer;
+<span style="color:#00f">using</span> Swashbuckle.AspNetCore.Swagger;
+<span style="color:#00f">using</span> Swashbuckle.AspNetCore.SwaggerGen;
+<span style="color:#00f">using</span> System.Linq;
+
+<span style="color:#00f">namespace</span> api_ver
+{
+    <span style="color:#008000">/// &lt;summary&gt;
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// &lt;/summary&gt;
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// &lt;remarks&gt;This &lt;see cref=&#34;IOperationFilter&#34;/&gt; is only required due to bugs in the &lt;see cref=&#34;SwaggerGenerator&#34;/&gt;.
+</span><span style="color:#008000"></span>    <span style="color:#008000">/// Once they are fixed and published, this class can be removed.&lt;/remarks&gt;
+</span><span style="color:#008000"></span>    <span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">SwaggerDefaultValues</span> : IOperationFilter
+    {
+        <span style="color:#008000">/// &lt;summary&gt;
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// Applies the filter to the specified operation using the given context.
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// &lt;/summary&gt;
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// &lt;param name=&#34;operation&#34;&gt;The operation to apply the filter to.&lt;/param&gt;
+</span><span style="color:#008000"></span>        <span style="color:#008000">/// &lt;param name=&#34;context&#34;&gt;The current operation filter context.&lt;/param&gt;
+</span><span style="color:#008000"></span>        <span style="color:#00f">public</span> <span style="color:#00f">void</span> Apply( Operation operation, OperationFilterContext context )
+        {
+            <span style="color:#2b91af">var</span> apiDescription = context.ApiDescription;
+
+            operation.Deprecated |= apiDescription.IsDeprecated();
+
+            <span style="color:#00f">if</span> ( operation.Parameters == <span style="color:#00f">null</span> )
+            {
+                <span style="color:#00f">return</span>;
+            }
+
+            <span style="color:#008000">// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/412
+</span><span style="color:#008000"></span>            <span style="color:#008000">// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/413
+</span><span style="color:#008000"></span>            <span style="color:#00f">foreach</span> ( <span style="color:#2b91af">var</span> parameter <span style="color:#00f">in</span> operation.Parameters.OfType&lt;NonBodyParameter&gt;() )
+            {
+                <span style="color:#2b91af">var</span> description = apiDescription.ParameterDescriptions.First( p =&gt; p.Name == parameter.Name );
+
+                <span style="color:#00f">if</span> ( parameter.Description == <span style="color:#00f">null</span> )
+                {
+                    parameter.Description = description.ModelMetadata?.Description;
+                }
+
+                <span style="color:#00f">if</span> ( parameter.Default == <span style="color:#00f">null</span> )
+                {
+                    parameter.Default = description.DefaultValue;
+                }
+
+                parameter.Required |= description.IsRequired;
+            }
+        }
+    }
+}
+</code></pre></div>
+<p>With those in place we will navigate back to our &ldquo;StartUp.cs&rdquo; file and make a few changes. First, add the <code>AddVersionedApi</code> service after the <code>AddVersioning</code> service like so:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddVersionedApiExplorer(options =&gt;
+{
+    options.GroupNameFormat = <span style="color:#a31515">&#34;&#39;v&#39;VVV&#34;</span>;
+    options.SubstituteApiVersionInUrl = <span style="color:#00f">true</span>;
+});
+</code></pre></div>
+<p>Next add the <code>AddTransient</code> service to the &ldquo;StartUp.cs&rdquo; class after <code>AddVersionedApiExplorere</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddTransient&lt;IConfigureOptions&lt;SwaggerGenOptions&gt;, ConfigureSwaggerOptions&gt;();
+</code></pre></div>
+<p><em>Note:</em> You might need to add: <code>using Swashbuckle.AspNetCore.SwaggerGen;</code>.</p>
+
+<p>Finally (at least as far as services go), we will want to update our <code>AddSwaggerGen</code> from:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddSwaggerGen(c =&gt;
+{
+    c.SwaggerDoc(<span style="color:#a31515">&#34;v1&#34;</span>, <span style="color:#00f">new</span> Info { Title = <span style="color:#a31515">&#34;Test API Versioning&#34;</span>, Version = <span style="color:#a31515">&#34;v1&#34;</span> });
+});
+</code></pre></div>
+<p>To:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddSwaggerGen(c =&gt;
+{
+    c.OperationFilter&lt;SwaggerDefaultValues&gt;();
+});
+</code></pre></div>
+<p>With the changes to our services in place, the last update we need to make is to the SwaggerUI middleware in the &ldquo;Configure&rdquo; method of the &ldquo;StartUp.cs&rdquo; class. First we will need to add the parameter <code>IApiVersionDescriptionProvider provider</code> to the signature of the &ldquo;Configure&rdquo; method so that is looks like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#00f">public</span> <span style="color:#00f">void</span> Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
+</code></pre></div>
+<p><em>Note:</em> We will also need to add: <code>using Microsoft.AspNetCore.Mvc.ApiExplorer;</code> if we don&rsquo;t already have it in our &ldquo;StartUp.cs&rdquo; class.</p>
+
+<p>With this change in place, we can now update our <code>UseSwaggerUI</code> from:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"> app.UseSwaggerUI(c =&gt;
+{
+    c.SwaggerEndpoint(<span style="color:#a31515">&#34;/swagger/v1/swagger.json&#34;</span>, <span style="color:#a31515">&#34;My Test API V1&#34;</span>);
+});
+</code></pre></div>
+<p>To:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">app.UseSwaggerUI(c =&gt;
+{
+    <span style="color:#00f">foreach</span> ( <span style="color:#2b91af">var</span> description <span style="color:#00f">in</span> provider.ApiVersionDescriptions )
+        {
+            c.SwaggerEndpoint( <span style="color:#a31515">$&#34;/swagger/{description.GroupName}/swagger.json&#34;</span>, description.GroupName.ToUpperInvariant() );
+        }
+});
+</code></pre></div>
+<p>If we have been careful in making these changes, then we should be able to, once again, <code>dotnet run</code> our project from the VS Code terminal and navigate to swagger (<code>https://localhost:5001/swagger</code>) to see that our endpoints are now nicely versioned:</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-5_hu0bfb2b51114f07b1460f40f3c908e8e5_140060_800x0_resize_box_2.png" width="800" height="640" alt=" swagger ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 5
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>But before we declare total victory, we might want to add a second version. Once again navigate to our &ldquo;ValuesController&rdquo;. This time, add</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">[ApiVersion(&#34;2.0&#34;)]
+</code></pre></div>
+<p>Beneath where we had added <code>[ApiVersion(&quot;1.0&quot;)]</code> before. Save the change and re-run our API. After navigating to our now familiar swagger address we should see the new version available to us in the top right corner of the SwaggerUI.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/api-ver/api-ver-6_hu4166ee396a0a27ba223e84999eb7b206_153964_800x0_resize_box_2.png" width="800" height="633" alt=" swagger ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 6
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<hr />
+
+<h4 id="summary">Summary</h4>
+
+<p>And that about does it. From here you can choose to version your controllers or endpoints however you like. Obviously there are many more considerations about how to structure, organize, and version your code. We have only scratched the surface in this walkthrough. But the nice part about using the <em>microsoft-api-versioning</em> library is that it supports you, no matter how you choose to approach verioning whether that is</p>
+
+<ul>
+<li><p>Query string parameter versioning</p></li>
+
+<li><p>URL path versioning (as in this example)</p></li>
+</ul>
+
+<p>-or-</p>
+
+<ul>
+<li>Header versioning</li>
+</ul>
+
+<p>So, now that you have a basic working example, expermient with it to find the strategy that is right for your needs.</p>
+
+<p>Thanks for reading.</p>
+
+<hr />
+
+<p>You can find my <a href="https://github.com/tsadams1973/dotnet-core/tree/master/api-ver">sample here</a> if you want a bit of a head start.</p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
