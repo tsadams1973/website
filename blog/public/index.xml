@@ -6,10 +6,26 @@
     <description>Recent content on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Resume</title>
+      <link>https://timblog.z19.web.core.windows.net/resume/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/resume/</guid>
+      <description>Timothy Adams
+Job Type: Permanent
+Work Schedule: Full-Time
+Desired locations: United States – FL or Remote
+WORK EXPERIENCE Solutions Architect, Innovation and Research
+University of South Florida, Health Informatics Institute – Tampa, FL
+January 2018 to Present - Hours per week: 40
+The mission of the Health Informatics Institute is to support the study, prevention, and treatment of diseases in a comprehensive and interdisciplinary fashion by establishing expertise in biomedical science, software and data engineering, and integrative bioinformatics.</description>
+    </item>
     
     <item>
       <title>API Versioning in ASP.NET Core</title>
