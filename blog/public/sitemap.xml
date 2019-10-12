@@ -3,8 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://timblog.z19.web.core.windows.net/resume/</loc>
     <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/azure-certification/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -16,18 +39,6 @@
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/api-ver/</loc>
     <lastmod>2019-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
-    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
-    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

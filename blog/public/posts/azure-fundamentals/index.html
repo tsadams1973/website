@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Azure Fundamentals - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Azure Fundamentals" />
+<meta property="og:description" content="Taking the AZ-900 exam to get certified on Azure Fundamentals" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/" />
+<meta property="article:published_time" content="2019-10-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-10-10T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Azure Fundamentals"/>
+<meta name="twitter:description" content="Taking the AZ-900 exam to get certified on Azure Fundamentals"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+	<link rel="shortcut icon" href="/images/Covatrix_Icon.ico">
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2>discord and hyperbole</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume">Resume</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Azure Fundamentals</h1>
+			<div class="meta">Posted on Oct 10, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>I have decided to purse some Azure certifications to improve my understanding of the product and bolster my resume. I generally like to start these types of efforts at the beginning, which means revisiting the fundamentals to ensure I have a good foundation. So, for this particular journey that means starting with an <a href="https://www.microsoft.com/en-us/learning/azure-fundamentals.aspx">Azure Fundamentals certification</a> by taking the AZ-900 exam.</p>
+
+<p>To keep it interesting, I though I might takes notes on the process here as I work through the <a href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">free training</a> Microsoft provides.</p>
+
+<hr />
+
+<p>The <a href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Microsoft training</a> is broken down into the following modules:</p>
+
+<p><strong>Module 1:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/index">Cloud Concepts - Principles of cloud computing</a></em></p>
+
+<p><em>Summary:</em><br />
+This module starts off by introducting the idea of cloud computing as a utility, similar to electricity. Cloud providers typically offer compute power, storage, networking, and anlytics. Compute offerings include VMs, containers, or serverless options. Storage offerings can scale based on need. Cloud computing can be flexible and cost efficient. It is based on a pay-as-you-go model. Cloud resources can scale vertically (adding more CPU&rsquo;s or memory) or horizontally (adding more servers). Cloud resources are elastic, so they can scale up and down as needed. Cloud computing is also current, reliable, and secure. Cloud providers can help compliance with regulations and standards (includes a list of compliance offerings). Cloud spending will be operational expenses (OpEx) rather than the capital expenses (CapEx) of tradiational on-premise offerings. Cloud deployment models define where your resources are stored and how your customers interact with them. You can choose public cloud (everything in the cloud), private cloud (everything on premise), or hybrid (some things in the public cloud some in the private cloud) models. In addition to cloud deployment models, there are three types of cloud services: infrastructure-as-a-service (IaaS), platform-as-a-service (PaaS), and software-as-a-service (SaaS). IaaS is akin to renting hardware from a cloud provider to run your systems: but you are still responsible for managing the operating systems, etc. PaaS, on the other hand, is a complete environment into which you can deploy your applications. With SaaS you are basically using software in the cloud over the web on a subscriptions service. The module ends with a quick quiz (knowledge check) and a summary. Overall I found this module took about 46 minutes to complete, versus the 62 minutes Microsoft estimated.</p>
+
+<p><strong>Modlue 2:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/index">Core Cloud Services - Introduction to Azure</a></em></p>
+
+<p>Summary:<br />
+This module introduces Azure, Microsoft&rsquo;s cloud computing platform. A quick video describes you to how Azure works at a high level, introducing the concept of virtualization with hypervisor, and the fundamental orchestrator and fabric controller architecture that powers Azure. A quick overview of Azure services lists the most commonly used: compute, networking, storage, mobile, databases, web, internet of things, big data, AI, and DevOps. You recieve a brief description of each of these services before jumping in to create your own website. This will be done in an App Service, which is an http-based service that you can use to host web-based solutions without needing to manage infrastructure. Following along with the tutorial, we activate our development sandbox, login to the <a href="https://portal.azure.com/">Azure Portal</a>, and create a resource. We choose &lsquo;WordPress&rsquo; to create a WordPress app and hit &lsquo;Create&rsquo;. The tutorial gives you some values to enter. Make sure to read all the steps first, because you need to create a new service plan. If you try to create the app using the pre-filled service plan, it will fail. Once everything is configured hit &lsquo;Create&rsquo; and wait for your app to depoly. Once deployment is complete, go to your resource in the azure portal. The overview page will show you the URL for it. Follow that to see your WordPress site up and running. After launching our site, we are invted to revisit the app in the portal. Looking at the overview page, we can see some graphs about the usage of our site, number of requests, data-in and data-out, etc. If we wanted to scale-up our app service to handle more load, we can do this with the scale-up option found in the app service&rsquo;s settings. (This would involve choosing a different pricing tier than we set in the original congiuration.) Finally we learn a bit about Azure Cloud Shell, which is a browser based CLI for programatically managing your Azure resources. The module runs us through some commands to list different azure resources associated with our subscription and eventually start and stop our app service from the command line. Again, the module ends with a quiz and summary. Unlike the last module, I found this one took about 59 minutes to complete versus the Microsoft estimate of 36 minutes. I&rsquo;m sure the extra time was spent on the hands-on exercises.</p>
+
+<p><strong>Modlue 3:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/explore-azure-infrastructure/index">Core Cloud Services - Azure architecture and service guarantees</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 4:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account/index">Create an Azure account</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 5:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/tour-azure-portal/index">Core Cloud Services - Manage services with the Azure portal</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 6:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-compute/index">Core Cloud Services - Azure compute options</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 7:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/intro-to-data-in-azure/index">Core Cloud Services - Azure data storage options</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 8:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-networking/index">Core Cloud Services - Azure networking options</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 9:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/index">Security, responsibility and trust in Azure</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 10:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/intro-to-governance/index">Apply and monitor infrastructure standards with Azure Policy</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 11:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/control-and-organize-with-azure-resource-manager/index">Control and organize Azure resources with Azure Resource Manager</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<p><strong>Modlue 12:</strong> <em><a href="https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/index">Predict costs and optimize spending for Azure</a></em><br />
+Summary:
+<em>TBD</em></p>
+
+<hr />
+
+<h4 id="az-900-review">AZ-900 Review</h4>
+
+<p><em>TBD</em></p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
