@@ -9,7 +9,7 @@ tags: ["azure"]
 
 In a previous [post](../azure-site/) we looked at how to host your static site in azure blog storage. We stopped with a simple 'hello world' page. 
 
-Unfortunately the default address for you site will be in the somewhat undesireable format <resource-name>.<zone>.web.core.windows.net. For this blog that is: [https://timblog.z19.web.core.windows.net/](https://timblog.z19.web.core.windows.net/). Obviously, we might to use a domain we already own. Fortunately, there are some options for this.
+Unfortunately the default address for you site will be in the somewhat undesirable format <resource-name>.<zone>.web.core.windows.net. For this blog that is: [https://timblog.z19.web.core.windows.net/](https://timblog.z19.web.core.windows.net/). Obviously, we might to use a domain we already own. Fortunately, there are some options for this.
 
 We will use an Azure CDN to configure our custom domain endpoint. We will use this option because it will allow us to map our domain to our Azure site, set up a custom SSL certificate for our site, and create a rewrite rule to redirect our traffic to https.
 
@@ -21,7 +21,7 @@ First we need to login to our Azure portal and navigate to the storage resource 
 
 We will choose the "Create new" option and give our CDN profile a name. For pricing tier we will need to choose "Premium Verizon" because that is the only one that currently supports the rewrite rules we need. We will choose a name for our CDN endpoint, and leave the origin hostname as the default provided which should be in the format <service-host-name>.blob.core.windows.net.
 
-Once those options are set, we will click "Create" and wait for our new endpoint to propogate.
+Once those options are set, we will click "Create" and wait for our new endpoint to propagate.
 
 ---
 
@@ -36,9 +36,9 @@ To finish setting up our site, we want to choose the "Origin" option under settt
 {{< imgproc azure-cdn-3 Resize "800x" "Azure CDN 3" "Figure 3" />}}
 
 
-We want to change "Origin type" to custom, and enter the domain for our static site in the "Origin hostname" field (which should propogate that name to the "Origin host header" field automatically.) Save your work.
+We want to change "Origin type" to custom, and enter the domain for our static site in the "Origin hostname" field (which should propagate that name to the "Origin host header" field automatically.) Save your work.
 
-The documentation says that it might take up to 30 minutes for the changes to propogate, but in my experience it might take longer. Stay the course. You can check your endpoint hostname. Eventually it will redirect to your static site.
+The documentation says that it might take up to 30 minutes for the changes to propagate, but in my experience it might take longer. Stay the course. You can check your endpoint hostname. Eventually it will redirect to your static site.
 
 ---
 
@@ -48,7 +48,7 @@ To do this, you need to go to your domain host and add a CNAME record for the do
 {{< imgproc azure-cdn-4 Resize "800x" "CNAME mapping" "Figure 4" />}}
 
 Once you've set up your CNAME record, you can navigate to your endpoint in your Azure portal and hit the "+ Custom Domain" link. (See Figure 2 if you need a reference.) This will pop up an option to add a "Custom hostname" for your "Endpoint hostname". Simply add the custom domain for which you created the CNAME record and click "Add".
-{{< imgproc azure-cdn-5 Resize "800x" "Custome domain mapping" "Figure 5" />}}
+{{< imgproc azure-cdn-5 Resize "800x" "Custom domain mapping" "Figure 5" />}}
 
 ---
 
@@ -79,7 +79,7 @@ Name your rule "Redirect http to https". Configure it by setting "If" "Request S
 
 {{< imgproc azure-cdn-10 Resize "800x" "Rule" "Figure 10" />}}
 
-Hit "Add". Give Azure some time to propogate your chages, and that is it. You should be done.
+Hit "Add". Give Azure some time to propagate your changes, and that is it. You should be done.
 
 
 ---

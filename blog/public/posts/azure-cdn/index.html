@@ -64,7 +64,7 @@
 		<div class="markdown">
 			<p>In a previous <a href="../azure-site/">post</a> we looked at how to host your static site in azure blog storage. We stopped with a simple &lsquo;hello world&rsquo; page.</p>
 
-<p>Unfortunately the default address for you site will be in the somewhat undesireable format <resource-name>.<zone>.web.core.windows.net. For this blog that is: <a href="https://timblog.z19.web.core.windows.net/">https://timblog.z19.web.core.windows.net/</a>. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.</p>
+<p>Unfortunately the default address for you site will be in the somewhat undesirable format <resource-name>.<zone>.web.core.windows.net. For this blog that is: <a href="https://timblog.z19.web.core.windows.net/">https://timblog.z19.web.core.windows.net/</a>. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.</p>
 
 <p>We will use an Azure CDN to configure our custom domain endpoint. We will use this option because it will allow us to map our domain to our Azure site, set up a custom SSL certificate for our site, and create a rewrite rule to redirect our traffic to https.</p>
 
@@ -99,7 +99,7 @@
 
 <p>We will choose the &ldquo;Create new&rdquo; option and give our CDN profile a name. For pricing tier we will need to choose &ldquo;Premium Verizon&rdquo; because that is the only one that currently supports the rewrite rules we need. We will choose a name for our CDN endpoint, and leave the origin hostname as the default provided which should be in the format <service-host-name>.blob.core.windows.net.</p>
 
-<p>Once those options are set, we will click &ldquo;Create&rdquo; and wait for our new endpoint to propogate.</p>
+<p>Once those options are set, we will click &ldquo;Create&rdquo; and wait for our new endpoint to propagate.</p>
 
 <hr />
 
@@ -159,9 +159,9 @@
 </figure>
 </p>
 
-<p>We want to change &ldquo;Origin type&rdquo; to custom, and enter the domain for our static site in the &ldquo;Origin hostname&rdquo; field (which should propogate that name to the &ldquo;Origin host header&rdquo; field automatically.) Save your work.</p>
+<p>We want to change &ldquo;Origin type&rdquo; to custom, and enter the domain for our static site in the &ldquo;Origin hostname&rdquo; field (which should propagate that name to the &ldquo;Origin host header&rdquo; field automatically.) Save your work.</p>
 
-<p>The documentation says that it might take up to 30 minutes for the changes to propogate, but in my experience it might take longer. Stay the course. You can check your endpoint hostname. Eventually it will redirect to your static site.</p>
+<p>The documentation says that it might take up to 30 minutes for the changes to propagate, but in my experience it might take longer. Stay the course. You can check your endpoint hostname. Eventually it will redirect to your static site.</p>
 
 <hr />
 
@@ -204,7 +204,7 @@
 
 
 <figure> 
-  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-5_hu7450c69ae9ef4ce6fe38aa375841e99f_69071_800x0_resize_box_2.png" width="800" height="583" alt=" Custome domain mapping ">
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-cdn/azure-cdn-5_hu7450c69ae9ef4ce6fe38aa375841e99f_69071_800x0_resize_box_2.png" width="800" height="583" alt=" Custom domain mapping ">
   <figcaption>
       <small>
           <center>
@@ -363,7 +363,7 @@ This is a less than ideal user experience, so we want to fix it. Fortunately wit
 </figure>
 
 
-<p>Hit &ldquo;Add&rdquo;. Give Azure some time to propogate your chages, and that is it. You should be done.</p>
+<p>Hit &ldquo;Add&rdquo;. Give Azure some time to propagate your changes, and that is it. You should be done.</p>
 
 <hr />
 

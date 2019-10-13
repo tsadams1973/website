@@ -27,7 +27,7 @@ To keep it interesting, I though I might takes notes on the process here as I wo
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://timblog.z19.web.core.windows.net/posts/api-ver/</guid>
-      <description>Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft&amp;rsquo;s aspnet-api-versioning library to learn how it provides an easy way to add different verioning semantics to your API project.
+      <description>Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft&amp;rsquo;s aspnet-api-versioning library to learn how it provides an easy way to add different versioning semantics to your API project.
 These libraries are really easy to get started with and there are a handful of useful samples here.</description>
     </item>
     
@@ -47,7 +47,7 @@ These libraries are really easy to get started with and there are a handful of u
       
       <guid>https://timblog.z19.web.core.windows.net/posts/azure-cdn/</guid>
       <description>In a previous post we looked at how to host your static site in azure blog storage. We stopped with a simple &amp;lsquo;hello world&amp;rsquo; page.
-Unfortunately the default address for you site will be in the somewhat undesireable format ..web.core.windows.net. For this blog that is: https://timblog.z19.web.core.windows.net/. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.
+Unfortunately the default address for you site will be in the somewhat undesirable format ..web.core.windows.net. For this blog that is: https://timblog.z19.web.core.windows.net/. Obviously, we might to use a domain we already own. Fortunately, there are some options for this.
 We will use an Azure CDN to configure our custom domain endpoint.</description>
     </item>
     

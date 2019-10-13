@@ -7,7 +7,7 @@ description: "Using Microsoft aspnet-api-versioning to add API versioning semant
 tags: ["api", "versioning", "swashbuckle", "swagger"]
 ---
 
-Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft's [aspnet-api-versioning](https://github.com/microsoft/aspnet-api-versioning) library to learn how it provides an easy way to add different verioning semantics to your API project.
+Versioning is an important aspect of API design and implementation. We want to be able change our service and add new features while still providing a stable API that our users can consume. To that end I recently spent a little time with Microsoft's [aspnet-api-versioning](https://github.com/microsoft/aspnet-api-versioning) library to learn how it provides an easy way to add different versioning semantics to your API project.
 
 These libraries are really easy to get started with and there are a handful of useful [samples here](https://github.com/microsoft/aspnet-api-versioning/tree/master/samples).
 
@@ -23,7 +23,7 @@ cd api-ver
 dotnet new webapi
 ```
 
-These will create a new API project named api-ver in the current directory. To open it with Visaul Studio Code, simply type `code .`.
+These will create a new API project named api-ver in the current directory. To open it with Visual Studio Code, simply type `code .`.
 
 You should be here:
 {{< imgproc api-ver-1 Resize "800x" "VS Code" "Figure 1" />}}
@@ -56,7 +56,7 @@ You will need to add a `using Swashbuckle.AspNetCore.Swagger;` to make this work
 
 *Note:* SwaggerGen is the service that will generate Swagger documents directly from our endpoints.
 
-Ofcourse, we also have to add the middleware to expose the Swagger endoints to our StartUp.cs. While we're at it we will also add the middleware to expose the API documentation. To do all of this we will add these lines to the Configure method of our Startup.cs file *after* `app.UseMvc()`:
+Of course, we also have to add the middleware to expose the Swagger endpoints to our StartUp.cs. While we're at it we will also add the middleware to expose the API documentation. To do all of this we will add these lines to the Configure method of our Startup.cs file *after* `app.UseMvc()`:
 
 ```csharp
 app.UseSwagger();
@@ -75,7 +75,7 @@ Now, if we run our project (`dotnet run` from the VS Code terminal), we will be 
 
 #### Wasn't this supposed to be about versioning?
 
-Right. Back to the versioning. Our current API lacks a coherent versioning strategy, so let's fix that. Fortunately, we already added the needed depenedincies earlier, so to start, we will add a new versioning service to our ConfigureServices method in our StartUp.cs class.
+Right. Back to the versioning. Our current API lacks a coherent versioning strategy, so let's fix that. Fortunately, we already added the needed dependencies earlier, so to start, we will add a new versioning service to our ConfigureServices method in our StartUp.cs class.
 
 Add the following after `services.AddMvc()`:
 
@@ -322,7 +322,7 @@ Beneath where we had added `[ApiVersion("1.0")]` before. Save the change and re-
 
 #### Summary
 
-And that about does it. From here you can choose to version your controllers or endpoints however you like. Obviously there are many more considerations about how to structure, organize, and version your code. We have only scratched the surface in this walkthrough. But the nice part about using the *microsoft-api-versioning* library is that it supports you, no matter how you choose to approach verioning whether that is 
+And that about does it. From here you can choose to version your controllers or endpoints however you like. Obviously there are many more considerations about how to structure, organize, and version your code. We have only scratched the surface in this walkthrough. But the nice part about using the *microsoft-api-versioning* library is that it supports you, no matter how you choose to approach versioning whether that is 
 
 * Query string parameter versioning
 
@@ -332,7 +332,7 @@ And that about does it. From here you can choose to version your controllers or 
 
 * Header versioning 
 
-So, now that you have a basic working example, expermient with it to find the strategy that is right for your needs.
+So, now that you have a basic working example, experiment with it to find the strategy that is right for your needs.
 
 Thanks for reading.
 

@@ -9,6 +9,7 @@ tags: ["books", "articles", "reading"]
 
 Books I have enjoyed that you might as well.
 
+* Art of Action - Stephen Bungay
 * Idealized Design - Russel Ackoff
 * [Fieldguide to understanding human error]() - Sidney Drekker
 * [Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339/) - Nicole Forsgren

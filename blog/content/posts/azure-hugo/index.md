@@ -35,7 +35,7 @@ Since we will be working on our site locally and deploying it to Azure, we will 
 
 Step *one* is to [download and install VS Code](https://code.visualstudio.com/docs/setup/setup-overview).
 
-There are a nunber of useful [extensions](https://marketplace.visualstudio.com/vscode) you can install for VS Code, but the one we will use for this example is the Azure Storage extension, which will allow us to update our static site on Azure right from our editor.
+There are a number of useful [extensions](https://marketplace.visualstudio.com/vscode) you can install for VS Code, but the one we will use for this example is the Azure Storage extension, which will allow us to update our static site on Azure right from our editor.
 
 Step *two* is to [download and install the Azure Storage extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage).
 
@@ -138,7 +138,7 @@ If you right click on the new "public" folder in the Explorer pane of VS Code, y
 
 {{< imgproc azure-hugo-6 Resize "800x" "deploy" "Figure 6" />}}
 
-This option was included with the "Azure Storage" extension we installed earlier. After you click it you will see a follow-up dialog to pick a Storage Account. Choose the one you created in our previous walkthrough. You will liekly be promted to delete the files that exist in your site and deply the new ones. Choose yes and wait for your site to be copied.
+This option was included with the "Azure Storage" extension we installed earlier. After you click it you will see a follow-up dialog to pick a Storage Account. Choose the one you created in our previous walkthrough. You will likely be prompted to delete the files that exist in your site and deploy the new ones. Choose yes and wait for your site to be copied.
 
 ---
 

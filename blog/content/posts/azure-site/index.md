@@ -48,7 +48,7 @@ Once you choose the "Enabled" option, you will see two new fields. Fill them out
 
 {{< imgproc storage-create-4 Resize "600x" "Create Storage 4" "Figure 4" />}}
 
-After saving, Azure automatically created a *$web* container for you. The next step is to create and upload the *index.html* and *404.html* files we referenced earlier. You can either click on the *$web* link on the "Static website" properties page or find the "Blobs" option in the left menu and the click the *$web* link for the continer you find there. Either way, you end up here:
+After saving, Azure automatically created a *$web* container for you. The next step is to create and upload the *index.html* and *404.html* files we referenced earlier. You can either click on the *$web* link on the "Static website" properties page or find the "Blobs" option in the left menu and the click the *$web* link for the container you find there. Either way, you end up here:
 
 {{< imgproc storage-create-5 Resize "600x" "Create Storage 5" "Figure 5" />}}
 
