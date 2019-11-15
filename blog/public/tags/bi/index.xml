@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bi on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/bi/</link>
+    <description>Recent content in bi on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Nov 2019 16:12:33 -0500</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/bi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to Power BI</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</link>
+      <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</guid>
+      <description>To learn more about Power BI, I decided to work through some of the content from the Create and use analytics reports with Power BI learning path from Microsoft&amp;rsquo;s (Learn platform)[https://docs.microsoft.com/en-us/learn/]. These are my notes and takeaways from those modules.
+Power BI consists of three elements:
+ Power BI Desktop - a Microsoft Windows desktop application Power BI Service - a SaaS service Power BI Apps - apps available on mobile devices  The general workflow of Power BI would involve creating a report using the Power BI Desktop, publishing it to the Power BI service, and sharing it so users can consume it using a Power BI Mobile App.</description>
+    </item>
+    
+  </channel>
+</rss>

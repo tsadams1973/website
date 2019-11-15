@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>certification on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/certification/</link>
+    <description>Recent content in certification on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Oct 2019 10:39:40 -0400</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploying and Configuring Infrastructure on Azure</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/</guid>
+      <description>After passing the AZ-900 exam to earn my Azure Fundamentals certificate, I thought I would move on to earning my Azure Solutions Architect Expert certification as well. This requires passing two exams: the AZ-300: Microsoft Azure Architect Technologies and the AZ-301 Microsoft Azure Architect Design.
+These are my notes about Deploying and Configuring Infrastructure, part of the AZ-300 exam.
+Monitoring Azure Monitor provides tools to collect and analyze telemetry data to help you manage the performance and availability of your resources and applications.</description>
+    </item>
+    
+    <item>
+      <title>Azure Fundamentals</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</guid>
+      <description>I have decided to purse some Azure certifications to improve my understanding of Microsoft Azure and demonstrate some expertise. I generally like to start these types of efforts at the beginning, which means revisiting the fundamentals to ensure I have a good foundation. So, for this particular journey that means starting with an Azure Fundamentals certification by taking the AZ-900 exam. To keep it interesting, I though I might take notes on the process here as I prepare for and take the exam.</description>
+    </item>
+    
+  </channel>
+</rss>

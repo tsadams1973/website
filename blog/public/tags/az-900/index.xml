@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>az-900 on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/az-900/</link>
+    <description>Recent content in az-900 on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/az-900/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Azure Fundamentals</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</guid>
+      <description>I have decided to purse some Azure certifications to improve my understanding of Microsoft Azure and demonstrate some expertise. I generally like to start these types of efforts at the beginning, which means revisiting the fundamentals to ensure I have a good foundation. So, for this particular journey that means starting with an Azure Fundamentals certification by taking the AZ-900 exam. To keep it interesting, I though I might take notes on the process here as I prepare for and take the exam.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,17 +6,80 @@
     <description>Recent content in Tags on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 16:12:33 -0500</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>azure certification</title>
-      <link>https://timblog.z19.web.core.windows.net/tags/azure-certification/</link>
+      <title>analytics</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/analytics/</link>
+      <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bi</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/bi/</link>
+      <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/bi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powerbi</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/powerbi/</link>
+      <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/powerbi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>az-300</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/az-300/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/az-300/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/azure/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certification</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/certification/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/certification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>training</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/training/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/training/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>az-900</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/az-900/</link>
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://timblog.z19.web.core.windows.net/tags/azure-certification/</guid>
+      <guid>https://timblog.z19.web.core.windows.net/tags/az-900/</guid>
       <description></description>
     </item>
     
@@ -53,15 +116,6 @@
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://timblog.z19.web.core.windows.net/tags/versioning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>azure</title>
-      <link>https://timblog.z19.web.core.windows.net/tags/azure/</link>
-      <pubDate>Mon, 15 Jul 2019 20:38:49 -0400</pubDate>
-      
-      <guid>https://timblog.z19.web.core.windows.net/tags/azure/</guid>
       <description></description>
     </item>
     

@@ -4,7 +4,7 @@ date: 2019-10-16
 draft: false
 type: "post"
 description: "Taking the AZ-900 exam to get certified on Azure Fundamentals"
-tags: ["azure certification"]
+tags: ["certification","azure","training","az-900"]
 ---
 
 I have decided to purse some Azure certifications to improve my understanding of Microsoft Azure and demonstrate some expertise. I generally like to start these types of efforts at the beginning, which means revisiting the fundamentals to ensure I have a good foundation. So, for this particular journey that means starting with an [Azure Fundamentals certification](https://www.microsoft.com/en-us/learning/azure-fundamentals.aspx) by taking the AZ-900 exam. To keep it interesting, I though I might take notes on the process here as I prepare for and take the exam.

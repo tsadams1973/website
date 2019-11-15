@@ -6,10 +6,32 @@
     <description>Recent content on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 16:12:33 -0500</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to Power BI</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</link>
+      <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</guid>
+      <description>To learn more about Power BI, I decided to work through some of the content from the Create and use analytics reports with Power BI learning path from Microsoft&amp;rsquo;s (Learn platform)[https://docs.microsoft.com/en-us/learn/]. These are my notes and takeaways from those modules.
+Power BI consists of three elements:
+ Power BI Desktop - a Microsoft Windows desktop application Power BI Service - a SaaS service Power BI Apps - apps available on mobile devices  The general workflow of Power BI would involve creating a report using the Power BI Desktop, publishing it to the Power BI service, and sharing it so users can consume it using a Power BI Mobile App.</description>
+    </item>
+    
+    <item>
+      <title>Deploying and Configuring Infrastructure on Azure</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/</link>
+      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/</guid>
+      <description>After passing the AZ-900 exam to earn my Azure Fundamentals certificate, I thought I would move on to earning my Azure Solutions Architect Expert certification as well. This requires passing two exams: the AZ-300: Microsoft Azure Architect Technologies and the AZ-301 Microsoft Azure Architect Design.
+These are my notes about Deploying and Configuring Infrastructure, part of the AZ-300 exam.
+Monitoring Azure Monitor provides tools to collect and analyze telemetry data to help you manage the performance and availability of your resources and applications.</description>
+    </item>
     
     <item>
       <title>Azure Fundamentals</title>

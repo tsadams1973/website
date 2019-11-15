@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Deploying and Configuring Infrastructure on Azure - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Deploying and Configuring Infrastructure on Azure" />
+<meta property="og:description" content="All about managing Azure resources." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/" />
+<meta property="article:published_time" content="2019-10-19T10:39:40-04:00"/>
+<meta property="article:modified_time" content="2019-10-19T10:39:40-04:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploying and Configuring Infrastructure on Azure"/>
+<meta name="twitter:description" content="All about managing Azure resources."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+	<link rel="shortcut icon" href="/images/Covatrix_Icon.ico">
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2>discord and hyperbole</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume">Resume</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Deploying and Configuring Infrastructure on Azure</h1>
+			<div class="meta">Posted on Oct 19, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>After passing the AZ-900 exam to earn my Azure Fundamentals certificate, I thought I would move on to earning my <a href="https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx">Azure Solutions Architect Expert</a> certification as well. This requires passing two exams: the <a href="https://www.microsoft.com/en-us/learning/exam-AZ-300.aspx">AZ-300: Microsoft Azure Architect Technologies</a> and the <a href="https://www.microsoft.com/en-us/learning/exam-AZ-301.aspx">AZ-301 Microsoft Azure Architect Design</a>.</p>
+
+<p>These are my notes about Deploying and Configuring Infrastructure, part of the AZ-300 exam.</p>
+
+<hr />
+
+<h3 id="monitoring">Monitoring</h3>
+
+<p><strong>Azure Monitor</strong> provides tools to collect and analyze telemetry data to help you manage the performance and availability of your resources and applications.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-deploying-config-infrastructure/az-monitor-1_hu09304c0d384913cb3dd8a516455c4c20_89384_800x0_resize_box_2.png" width="800" height="449" alt=" Azure Monitor ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Data collected by Azure Monitor are either metrics or logs. Metrics are numbers that describe a property of a system at a point in time. Logs are records of different kinds of data. Most Azure resources show some data from Azure Monitor in their overview pages. Logs can be queried using Log Analytics from the Azure Portal. Azure monitor collects metrics, activity logs, and diagnostic logs:</p>
+
+<ul>
+<li>Application monitoring data</li>
+<li>Guest OS monitoring data</li>
+<li>Azure resources monitoring data</li>
+<li>Azure subscription monitoring data</li>
+<li>Azure tenant monitoring data</li>
+</ul>
+
+<p>You can also use the Data Collector API to collect log data from REST clients to include them in your monitoring. With Application Insights you can monitor the availability, performance, and use of web applications (on-prem and cloud).</p>
+
+<p>Azure monitor provides three capabilities:</p>
+
+<ul>
+<li>Monitor and visualize metrics</li>
+<li>Query and analyze logs</li>
+<li>Setup alerts and actions</li>
+</ul>
+
+<p>The Activity Log is a subscription level log. Logs are kept for 90 days. It provides data on subscription level events from Azure Resource Manager through Service Health events. For any write operations it will tell you:</p>
+
+<ul>
+<li>What happened</li>
+<li>Who did it</li>
+<li>When it happened</li>
+<li>Current status</li>
+<li>The values of any other relevant properties</li>
+</ul>
+
+<p>The activity log includes several types of events that may occur: administrative, service health, alert, autoscale, recommendation, security, and policy and resource health.</p>
+
+<p>Azure Advisor makes recommendations to optimize your Azure usage for security, availability, performance, and cost. It will provide you with quick links to implement its suggestions or find more help about how to implement them.</p>
+
+<h3 id="alerts">Alerts</h3>
+
+<p>Azure Monitor also provides alerting capabilities to let you know when important things happen. Alerts have: rules, action groups, and monitor conditions. Alert rules capture the target of the alert. The monitoring conditions define the criteria for it. Action groups define the preferences for how the notification will be handled (.e. email, ITSM, Logic or Function App, Runbook, SMS, Voice, or Webhook). Alerts have states (new, acknowledged, close) that are set by the user after the alert is fired. Alerts have monitoring conditions that are set by the system.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-deploying-config-infrastructure/az-alerts-1_hu6f0a6c855c5a013eb02b37c97e8509bd_73880_400x0_resize_box_2.png" width="400" height="477" alt=" Azure Alerts ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>The Alerts page shows a summary of alerts that were created over a specified time frame. Clicking on an alert will take you to its detail page with additional information, including a history of actions taken by the alert or changes made to it.</p>
+
+<h3 id="activity-logs-and-log-analytics">Activity Logs and Log Analytics</h3>
+
+<p>The Activity Log provides an audit trail of the activities performed on your Azure resources. (It differs from a Diagnostic Log because it shows outside activity acting on the resource, rather than information about the operation of that resource.) The Activity Log is one section of the Monitor blade. Also, most Azure resources have an Activity Log section in their blades to show activity filtered to that resource. You can define custom filters for the logs and save them. Creating a Log Profile will allow you to configure how your log is exported (where it is sent, the event categories to be sent, which regions to export, or how it should be retained).</p>
+
+<p>Looking at the Log Analytics workspaces architecture, connected sources provide information to the Log Analytics Service which stores data in the OMS Repository. An Azure storage account can also be configured to collect Azure Diagnostics data and send it to the Log Analytics service. You can query your logs with a special query language. The main tables with data are: event, syslog, heartbeat, and alert. Queries are basically the name of the table with the data followed by pipes with commands.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Event
+| where (EventLevelName == &#34;Warning&#34;)</pre></div>
+<h3 id="network-watcher">Network Watcher</h3>
+
+<p>The Azure Network Watcher has tools to monitor, diagnose, view metrics, and enable logs for resources in an Azure virtual network. You can automate remote network monitoring, see network traffic, and diagnose VPN issues. Connection monitor monitors the communication between a vm and an endpoint. Network performance monitor looks at network performance between points in the network infrastructure to detect issues like traffic blackholing or routing errors. You can generate a visual diagram of the resources in your virtual network using the Topology capability of Network Watcher. Helpful diagnostics include IP FLow Verify, Next Hop, and VPN Diagnostics. Network Security Group Flow Logs let you view information about ingress and egress IP traffic through an NSG. (Logs are JSON.)</p>
+
+<hr />
+
+<h3 id="supporting-links">Supporting Links</h3>
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/">Azure Monitor Documentation</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/overview">Azure Monitor Overview</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview">Overview of Log Queries</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/kusto/query/">Data Explorer Query Language</a></li>
+<li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Azure-Monitor/player">Azure Friday Azure Monitor</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/advisor/advisor-overview">Azure Advisor Overview</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations">Azure Advisor Cost Reduction</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview">Overview of Alerts</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-overview">Overview of the Activity Log</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows">Connecting to Log Analytics</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-data-sources">Data Sources in Log Analytics</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-queries">Getting started with Log queries</a></li>
+<li><a href="https://azure.microsoft.com/en-us/services/network-watcher/">Network Watcher</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-connectivity-portal">Troubleshoot connections with Azure Network Watcher</a></li>
+</ul>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

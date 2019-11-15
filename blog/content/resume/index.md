@@ -155,6 +155,20 @@ DevOps Days Tampa Bay – Tampa, FL
 
 ---
 
+### CERTIFICATIONS
+
+**Microsoft Certified Azure Fundamentals**  
+Earned October 2019
+
+**Certified Team Kanban Practitioner**  
+Earned October 2017
+
+**Joint SAS/USF Certificate in Analytics and Business Intelligence**  
+Earned December 2014
+
+
+---
+
 ### EDUCATION
 
 **Master of Science in Management Information Systems, Business Intelligence and Analytics**  

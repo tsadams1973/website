@@ -3,30 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <loc>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</loc>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/azure-certification/</loc>
-    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+    <loc>https://timblog.z19.web.core.windows.net/tags/analytics/</loc>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/bi/</loc>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/</loc>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/powerbi/</loc>
+    <lastmod>2019-11-14T16:12:33-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-deploying-config-infrastructure/</loc>
+    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/az-300/</loc>
+    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
+    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/certification/</loc>
+    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/training/</loc>
+    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-fundamentals/</loc>
+    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/az-900/</loc>
     <lastmod>2019-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -68,12 +120,6 @@
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/azure-hugo/</loc>
     <lastmod>2019-07-15T20:38:49-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
-    <lastmod>2019-07-15T20:38:49-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
