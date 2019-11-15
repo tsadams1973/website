@@ -11,6 +11,8 @@ To learn more about Power BI, I decided to work through some of the content from
 
 ---
 
+### Introduction
+
 Power BI consists of three elements: 
 
 * Power BI Desktop - a Microsoft Windows desktop application
@@ -57,6 +59,29 @@ Choosing the "*Sales and Marketing Sample*" will take you to a prebuilt report f
 {{< imgproc power-bi-3 Resize "800x" "Power BI Apps 3" "Figure 3" />}}
 
 ---
+
+### Power BI Desktop
+
+Before we take a look at Power BI Desktop, you will need to download it. You can find information on that [here](https://powerbi.microsoft.com/en-us/downloads/). With Power BI installed, let's continue.
+
+When you open Power BI Desktop, you should see something like this:
+{{< imgproc power-bi-4 Resize "800x" "Power BI Desktop" "Figure 4" />}}
+
+It should look familiar to anyone used to working with Microsoft products:
+
+1. A *ribbon* across the top for handling most tasks
+2. A large *canvas* to work on
+3. Collapsible *panes* to the right for working with data
+
+Take notice of the **Publish** button in the upper right hand corner. This is how you will publish your report to the Power BI service after you are done creating it.
+
+To load data into Power BI Desktop, choose the *Get Data* option in the home ribbon. Power BI has a number of built in connectors to attach to the data source of your choice. If you are planning to import data from Excel, make sure that you format your data as a *table* first. For a few other tips on how to work with Excel as a data source in Power BI, check out the [Microsoft documentation](https://docs.microsoft.com/en-us/power-bi/service-excel-workbook-files).
+
+Inside Power BI Desktop, you can use the **Power Query Editor** tool to transform the data you are importing. This tool will allow you to duplicate or edit columns to make your data easier to work with. You will need to *Apply* your changes for them to take effect.
+
+In addition to transforming your data, you can also combine data from different sources. Working within the Power Query Editor you can add new sources of data with the *New Source* button. You can choose to *merge* or *append* that data to your existing query to combine it with the original source.
+
+
 
 
 
