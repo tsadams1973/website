@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>management on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/management/</link>
+    <description>Recent content in management on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Attack of the Knee People</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</guid>
+      <description>I just stumbled on this post I wrote on Medium a while back. Here is the link to it in case you are interested:
+Attack of the knee people: or How I learned to stop worrying and love fractional resource allocations…</description>
+    </item>
+    
+  </channel>
+</rss>

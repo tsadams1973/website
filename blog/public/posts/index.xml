@@ -6,10 +6,20 @@
     <description>Recent content in Posts on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Nov 2019 16:12:33 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Attack of the Knee People</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</guid>
+      <description>I just stumbled on this post I wrote on Medium a while back. Here is the link to it in case you are interested:
+Attack of the knee people: or How I learned to stop worrying and love fractional resource allocations…</description>
+    </item>
     
     <item>
       <title>Introduction to Power BI</title>
@@ -17,7 +27,7 @@
       <pubDate>Thu, 14 Nov 2019 16:12:33 -0500</pubDate>
       
       <guid>https://timblog.z19.web.core.windows.net/posts/intro-power-bi/</guid>
-      <description>To learn more about Power BI, I decided to work through some of the content from the Create and use analytics reports with Power BI learning path from Microsoft&amp;rsquo;s (Learn platform)[https://docs.microsoft.com/en-us/learn/]. These are my notes and takeaways from those modules.
+      <description>To learn more about Power BI, I decided to work through some of the content from the Create and use analytics reports with Power BI learning path from Microsoft&amp;rsquo;s Learn platform. These are some of my notes and takeaways from those modules.
 Introduction Power BI consists of three elements:
  Power BI Desktop - a Microsoft Windows desktop application Power BI Service - a SaaS service Power BI Apps - apps available on mobile devices  The general workflow of Power BI would involve creating a report using the Power BI Desktop, publishing it to the Power BI service, and sharing it so users can consume it using a Power BI Mobile App.</description>
     </item>

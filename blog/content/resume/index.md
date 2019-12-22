@@ -17,7 +17,7 @@ Desired locations: *United States – FL or Remote*
 
 **Solutions Architect, Innovation and Research**  
 University of South Florida, Health Informatics Institute – Tampa, FL  
-January 2018 to Present - Hours per week: 40  
+January 2018 to December 2019 - Hours per week: 40  
 
 *The mission of the Health Informatics Institute is to support the study, prevention, and treatment of diseases in a comprehensive and interdisciplinary fashion by establishing expertise in biomedical science, software and data engineering, and integrative bioinformatics. Its research is focused on the prevention of diabetes and other autoimmune diseases, cancer prevention and control, genetic disorders, and rare diseases.*
 
@@ -156,6 +156,9 @@ DevOps Days Tampa Bay – Tampa, FL
 ---
 
 ### CERTIFICATIONS
+
+**Microsoft Certified Azure Solutions Architect Expert**  
+Earned December 2019
 
 **Microsoft Certified Azure Fundamentals**  
 Earned October 2019

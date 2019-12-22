@@ -7,7 +7,7 @@ description: "How to use Power BI."
 tags: ["powerbi","bi","analytics"]
 ---
 
-To learn more about Power BI, I decided to work through some of the content from the [Create and use analytics reports with Power BI](https://docs.microsoft.com/en-us/learn/paths/create-use-analytics-reports-power-bi/) learning path from Microsoft's (Learn platform)[https://docs.microsoft.com/en-us/learn/]. These are my notes and takeaways from those modules.
+To learn more about Power BI, I decided to work through some of the content from the [Create and use analytics reports with Power BI](https://docs.microsoft.com/en-us/learn/paths/create-use-analytics-reports-power-bi/) learning path from Microsoft's [Learn platform](https://docs.microsoft.com/en-us/learn/). These are some of my notes and takeaways from those modules.
 
 ---
 
@@ -81,8 +81,16 @@ Inside Power BI Desktop, you can use the **Power Query Editor** tool to transfor
 
 In addition to transforming your data, you can also combine data from different sources. Working within the Power Query Editor you can add new sources of data with the *New Source* button. You can choose to *merge* or *append* that data to your existing query to combine it with the original source.
 
+---
 
+### Data Modeling
 
+One benefit of Power BI is that it lets you define *relationships* between your data so that it isn't necessary to flatten it. The Power BI Desktop has a **Model View** canvas where you can see your data sources. You can also visually create relationships between them (along with other tasks such as removing columns or even hiding whole tables). For more in-depth management, the Home ribbon also has a **Manage Relationships** button that allows you to create and edit relationships.
 
+Sometimes you might want to create a relationship between two datasets when no common column exists between them. In instances like these, it is possible to create new calculated columns that combine fields in the dataset in order to map them. This can be accomplished in the *Modeling Ribbon*. This ribbon lets you perform other useful operations, such as adding calculated columns, sorting your visualizations, or otherwise optimizing your data model.
 
+---
 
+### Conclusion
+
+Obviously there is much more to learn about Power BI, but hopefully this has been a useful overview and introduction.
