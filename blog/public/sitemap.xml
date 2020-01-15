@@ -100,6 +100,29 @@
   </url>
   
   <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/msal-session-vc/</loc>
+    <lastmod>2019-08-05T20:17:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/b2c/</loc>
+    <lastmod>2019-08-05T20:17:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/core/</loc>
+    <lastmod>2019-08-05T20:17:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/msal/</loc>
+    <lastmod>2019-08-05T20:17:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/api-ver/</loc>
     <lastmod>2019-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -147,6 +170,29 @@
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/azure-site/</loc>
     <lastmod>2019-07-05T11:53:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/reading-list/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/articles/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/books/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/reading/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

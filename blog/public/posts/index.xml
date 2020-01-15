@@ -53,6 +53,15 @@ Monitoring Azure Monitor provides tools to collect and analyze telemetry data to
     </item>
     
     <item>
+      <title>Using custom middleware to handle MsalUiRequired exceptions.</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/msal-session-vc/</link>
+      <pubDate>Mon, 05 Aug 2019 20:17:00 -0400</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/msal-session-vc/</guid>
+      <description>If you are using Microsoft Azure AD or Azure AD B2C as part of your IAM solution, odds are you are also using the Microsoft Authentication Library, MSAL.NET, to help you manage your tokens. This convenient library helps you acquire tokens that you can use to access APIs protected by Azure AD. It is useful and will save you a lot of time, but is not without its limitations.</description>
+    </item>
+    
+    <item>
       <title>API Versioning in ASP.NET Core</title>
       <link>https://timblog.z19.web.core.windows.net/posts/api-ver/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
@@ -90,6 +99,16 @@ We will use an Azure CDN to configure our custom domain endpoint.</description>
       <guid>https://timblog.z19.web.core.windows.net/posts/azure-site/</guid>
       <description>One useful feature of Microsoft Azure that has recently achieved general availability is the ability to host static websites in Azure storage. This blog is an example of such a site, so I thought I might put together a series of posts describing how I built and hosted it. This first installment will cover setting up a simple site in Azure.
 I will assume that you already have a Microsoft Azure subscription, but if not you can get started with a free account here: Microsoft Azure Free Account</description>
+    </item>
+    
+    <item>
+      <title>Books one might read</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/reading-list/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/reading-list/</guid>
+      <description>Good books.
+ The Goal (Graphic Novel) - Eliyahu M. Goldratt FIRE: How Fast, Inexpensive, Restrained, and Elegant Methods Ignite Innovation - Dan Ward Fieldguide to understanding human error - Sidney Dekker Accelerate - Nicole Forsgren Escaping the Build Trap: How Effective Product Management Creates Real Value - Melissa Perri  </description>
     </item>
     
   </channel>

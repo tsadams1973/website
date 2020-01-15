@@ -1,7 +1,7 @@
 ---
 title: "Using custom middleware to handle MsalUiRequired exceptions."
 date: 2019-08-05T20:17:00-04:00
-draft: true
+draft: false
 type: "post"
 description: "If you are unable to use filters to handle exceptions when requesting access tokens this middleware solution might help.l"
 tags: ["azure", "b2c", "msal", "core"]
