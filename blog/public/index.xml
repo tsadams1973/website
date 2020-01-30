@@ -6,10 +6,20 @@
     <description>Recent content on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Practical Automated Machine Learning on Azure</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-practical-ml-book/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-practical-ml-book/</guid>
+      <description>I picked up this book to learn more about machine learning on Azure. While it is a good book, and one I would recommend, I found some of the hands-on sections challenging. I put together some resources to help anyone else that experiences those same difficulties. If you are reading this, then that might be you.
+I thought Part I. of the book, an overview of machine learning and explanation of how it works, was clear.</description>
+    </item>
     
     <item>
       <title>Attack of the Knee People</title>
@@ -124,7 +134,7 @@ I will assume that you already have a Microsoft Azure subscription, but if not y
       
       <guid>https://timblog.z19.web.core.windows.net/posts/reading-list/</guid>
       <description>Good books.
- The Goal (Graphic Novel) - Eliyahu M. Goldratt FIRE: How Fast, Inexpensive, Restrained, and Elegant Methods Ignite Innovation - Dan Ward Fieldguide to understanding human error - Sidney Dekker Accelerate - Nicole Forsgren Escaping the Build Trap: How Effective Product Management Creates Real Value - Melissa Perri  </description>
+ The Goal (Graphic Novel) - Eliyahu M. Goldratt Systems Thinking for Social Change - David Stroh Leaders - Myth and Reality - Stanley McChrystal, Jeff Eggers and Jay Mangone Team of Teams - Stanley McChrystal, Chris Fussell and Tantum Collins Extreme Ownership - Jocko Willink and Leif Babin The Dichotomy of Leadership - Jocko Willink and Leif Babin FIRE: How Fast, Inexpensive, Restrained, and Elegant Methods Ignite Innovation - Dan Ward The Field Guide to Understanding Human Error - Sidney Dekker Accelerate - Nicole Forsgren Escaping the Build Trap: How Effective Product Management Creates Real Value - Melissa Perri Switch - Chip Heath and Dan Heath Quiet - Susan Cain  </description>
     </item>
     
     <item>

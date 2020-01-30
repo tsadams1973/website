@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Practical Automated Machine Learning on Azure - iconic sections</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Practical Automated Machine Learning on Azure" />
+<meta property="og:description" content="Some thoughts about the book and resources to help get through it more easily." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://timblog.z19.web.core.windows.net/posts/azure-practical-ml-book/" />
+<meta property="article:published_time" content="2020-01-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-01-15T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Practical Automated Machine Learning on Azure"/>
+<meta name="twitter:description" content="Some thoughts about the book and resources to help get through it more easily."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+	<link rel="shortcut icon" href="/images/Covatrix_Icon.ico">
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">iconic sections</h1>
+	<div class="site-description"><h2>discord and hyperbole</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/tsadams1973" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/tsadams1973" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume">Resume</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Practical Automated Machine Learning on Azure</h1>
+			<div class="meta">Posted on Jan 15, 2020</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>I picked up <a href="http://shop.oreilly.com/product/0636920269885.do">this book</a> to learn more about machine learning on Azure. While it is a good book, and one I would recommend, I found some of the hands-on sections challenging. I put together some resources to help anyone else that experiences those same difficulties. If you are reading this, then that might be you.</p>
+
+<p>I thought Part I. of the book, an overview of machine learning and explanation of how it works, was clear. However, getting into the good stuff in Part II. Automated ML on Azure, I felt the authors jumped into some examples without always providing clear direction on where to get the sample code. As I figured that out and worked through the chapters, I put together some notes and resources that I think better match up with the content of the book. I have included those below, organized by chapter title.</p>
+
+<p>This all assumes you already have an Azure subscription set up.</p>
+
+<hr />
+
+<h3 id="getting-started-with-microsoft-azure-machine-learning-nad-automated-ml">Getting Started with Microsoft Azure Machine Learning nad Automated ML</h3>
+
+<p>After a brief introduction, this chapter jumps right into Azure to set up a machine learning environment. It starts by asking us to register resources providers for those services (found in the <em>Settings</em> section of your subscription). This is the first discrepancy I found. The book tells us to search for <em>&lsquo;machinelearning&rsquo;</em>, and to register the following:</p>
+
+<ul>
+<li>Microsoft.MachineLearning</li>
+<li>Microsoft.MachineLearningCompute</li>
+<li>Microsoft.MachineLearningServices</li>
+<li>Microsoft.MachineLearningModelManagement</li>
+</ul>
+
+<p>However, the only resource providers currently available in my subscription were Microsoft.MachineLearning and Microsoft.MachineLearningServices (see <em>Figure 1</em> below).</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-1_hu61836ec2ef6a47b0995c891fca9fece2_17195_425x0_resize_box_2.png" width="425" height="214" alt=" Azure CDN 1 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 1
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>If you see the same thing, just know that the examples will still work if you only register those two services. The Key Vault and container resource providers should all be there. The next step is to create a Machine Learning service. Again, the book tells you to search for <em>&lsquo;machine learning service workspaces&rsquo;</em> in Azure, but this does not seem to be the case anymore. Instead, simply search for <em>&lsquo;machine learning&rsquo;</em> and choose that option as seen in <em>Figure 2</em> below. The remainder of the instructions on setting up the workspace should still be accurate.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-2_hu4c05dd5247e46f4ec0ed80bc8db32505_57415_600x0_resize_box_2.png" width="600" height="315" alt=" Azure CDN 1 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 2
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p><em>Note</em> - in the upcoming sections you will need to use the <strong>subscription id</strong>, <strong>resource group name</strong>, <strong>workspace name</strong>, and <strong>region</strong> to configure the examples. You might want to take note of them now, or at least be aware that they can all be found in the <em>Overview</em> section of the workspace you just created.</p>
+
+<p>After this initial setup in Azure, you are directed to set up <a href="https://notebooks.azure.com/">Azure Notebooks</a>. While that part is straightforward, the book then proceeds to walk through a sample. I found that confusing because it was not entirely clear where that example came from. I was able to track it down, but lost some time doing that. To help anyone else having the same trouble I created my own Azure Notebook to cover this chapter.</p>
+
+<p>To run it, I recommend you clone my <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project into your own Azure Notebook account. Run the notebook named <em>Chap_3_Predictive_maintenance_NASA_sample.ipynb</em> to easily follow along with the rest of the chapter. Because I used a simpler version of the sample illustrated in the book, the figure for <em>&ldquo;Instantiating the Azure Machine Learning Workspace&rdquo;</em> will look slightly different, but everything else should be the same. The only modification you need to make is to substitute your <strong>subscription id</strong>, <strong>resource group name</strong>, <strong>workspace name</strong>, and <strong>region</strong> where noted in the sample (this is mentioned in the book as well). Also note: the cell shown in <em>Figure 3</em> is the one that triggers the Azure authentication.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-3_hu62c9be77ed896aaf0b25e39a0043a3c8_130561_800x0_resize_box_2.png" width="800" height="217" alt=" Azure CDN 1 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 3
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Also, the AutoMLConfig step will likely throw a warning about the inputs being deprecated as shown in <em>Figure 4</em>. This appears to be triggered by the <em>&ldquo;X =&rdquo;</em> input, but does not negatively impact the notebook.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-4_hue84ca47521ef2bc40e04f89a3ddf8009_161209_800x0_resize_box_2.png" width="800" height="414" alt=" Azure CDN 1 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 4
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Other than that, you should be able to run the notebook and follow along with the book.</p>
+
+<h3 id="feature-engineering-and-automated-machine-learning">Feature Engineering and Automated Machine Learning</h3>
+
+<p>Chapter 4 talks about preprocessing and feature engineering with Azure Machine Learning and wastes no time jumping into some examples. It also presupposes that you have a Jupyter notebook set up to work through the Nasa Predictive Maintenance sample. I put together a Notebook in my <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project to help with this: <em>Chap_4_Predictive_maintenance_NASA_sample.ipynb</em>.</p>
+
+<p>This notebook will look very similar to the one used in the last chapter, except for a few changes:</p>
+
+<ul>
+<li>It uses the <em>train_FD004</em> data set instead of <em>train_FD001</em></li>
+<li>It uses a slightly different AutoMLConfig to match the one from the chapter</li>
+<li>It includes the utility print functions and code to run them on the generated models</li>
+</ul>
+
+<p>Do not forget to substitute your <strong>subscription id</strong>, <strong>resource group name</strong>, <strong>workspace name</strong>, and <strong>region</strong> where noted, and as with the last chapter, you will receive a warning about deprecated inputs to you AutoMLConfig. With this notebook you should be able to follow along with the examples in the first half of the chapter focusing on <strong>Auto-Featurization for Classification and Regressing</strong>.</p>
+
+<p><em>Note</em> - at the end of this sample, you will look at the engineered features with two different commands shown in <em>Figure 5</em> below. If you receive a key error for <em>&lsquo;datatransformer&rsquo;</em>, check that you have <em>&lsquo;preprocess&rsquo;</em> set to <em>True</em> in the AutoMLConfig.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-5_hu09b503f03ba0a3d78ac1ad897745e73d_91084_800x0_resize_box_2.png" width="800" height="152" alt=" Azure ML 5 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 5
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Apart from that potential gotcha, you should be able to make it through the first half of this chapter easily.</p>
+
+<p>For the second half of the chapter, <strong>Auto-Featurization for Time-Series Forecasting</strong>, refer to the <em>Chap_4_auto-ml-forecasting-energy-demand-end2end.ipynb</em> Notebook also located in the my <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project.</p>
+
+<p>This Notebook is organized a little differently than the other three we worked with. All of the Azure set up is moved to the top, so simply run through all of those until you get to the <em>Data</em> section, which is where the book picks up. We read the data set directly from the project instead of getting it from the URL first, because I have already included it in the project (see <em>Figure 6</em>). After that step you should recognize all of the code snippets from the book and be able to follow along seamlessly.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-6_hu48462f2031e2a0e3de010ef0a1ffb750_45758_650x0_resize_box_2.png" width="650" height="152" alt=" Azure ML 6 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 6
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>That wraps up Chapter 4 on feature engineering.</p>
+
+<h3 id="deploying-automated-machine-learning-models">Deploying Automated Machine Learning Models</h3>
+
+<p>My experience was that deploying the model from the example in Chapter 5 was challenging. The good news is that this chapter points you to a <a href="https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_5_Model_Deployment.ipynb">Notebook you can use to follow along</a>. The bad is that I had trouble creating the image in that Notebook. I mostly encountered errors installing <em>&lsquo;psutil&rsquo;</em> due to <em>&lsquo;gcc&rsquo;</em> not being found whenever I tried to include the azureml-train-automl (which is required to run the image and score with the model). You are welcome to try their example, but I created my own version: <em>Chap_5_Model_Deployment.ipynb</em> in the <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project using the <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment">recommended Model.Deploy() approach</a> and everything seemed to work. Best I can tell this is due to the base image that is used, but I could be wrong about that.</p>
+
+<p>Something else to note about his chapter: at this point we are creating Container Registries and Container Instances, which cost more than the other resources we have been using so far. The AzureML SDK will create a registry for your Machine Learning workspace if one does not already exist. So, you don&rsquo;t need to explicitly create one. However, if you are using this resource simply to learn, then you might want to delete the Container Registry when you are done (or if you plan to leave it idle for a few days).</p>
+
+<p>The problem with this approach is that your Machine Learning workspace will retain a reference to that original registry. So, future attempts to create images with the SDK will fail because it will not be able to find the registry you deleted. However, with a little preparation you can avoid this. For me, I downloaded the template for my registry before I deleted it. You can accomplish this with the <em>Export Template</em> option in the <em>Settings</em> section of the container registries blade as seen in <em>Figure 7</em>.</p>
+
+
+
+
+
+
+
+
+
+
+<figure> 
+  <img style="max-width: 100%; width: auto; height: auto;" src="/posts/azure-practical-ml-book/azure-pml-7_hucabbf91cc935667f8f3175ec7d65e509_154988_650x0_resize_box_2.png" width="650" height="513" alt=" Azure ML 7 ">
+  <figcaption>
+      <small>
+          <center>
+              <strong>
+    
+	Figure 7
+    
+             </strong>
+            </center>
+      </small>
+    </figcaption>
+</figure>
+
+
+<p>Once you have downloaded the template, it is easy to recreate the registry. You can run the following two commands in an Azure Cloud Shell powershell session to delete the registry and recreate it from the template respectively. (I will update the template file to the clouds hell to make it easier to reference and reuse it.)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">az acr delete -n &lt;registry-name&gt;
+New-AzResourceGroupDeployment -ResourceGroupName &lt;resource-group-name&gt; -TemplateFile &lt;path-to-template&gt;</code></pre></div>
+<p>But wait, we aren&rsquo;t done. When you drop the registry and re-add it, you lose all the keys needed to access it. Fortunately the Azure ml cli has a command to resync your workspace. Again, this is easily run from an Azure Cloud Shell powershell session. If you have not installed the ml cli yet, then you first need to add that extension. After that it is one command to sync everything up again. (The <em>sync-keys</em> command is also helpful if you regenerate passwords for your container registry. Anytime you have trouble with the parts of your workspace communicating, running it might help.)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">az extension add --name azure-cli-ml
+az ml workspace sync-keys -g practical-ml-rg --subscription-id 3b825558-5a02-405c-ad03-c83db8f38b89 -w auto-ml</code></pre></div>
+<p>You could probably avoid the above by <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-export-delete-data">using the REST APIs to manage Machine Learning Service workspace data</a>. But I have not got to that yet.</p>
+
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

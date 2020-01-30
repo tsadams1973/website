@@ -1,7 +1,7 @@
 ---
 title: "Practical Automated Machine Learning on Azure"
 date: 2020-01-15
-draft: true
+draft: false
 type: "post"
 description: "Some thoughts about the book and resources to help get through it more easily."
 tags: ["azure","machine learning","ai"]
@@ -66,8 +66,34 @@ Apart from that potential gotcha, you should be able to make it through the firs
 
 For the second half of the chapter, **Auto-Featurization for Time-Series Forecasting**, refer to the *Chap_4_auto-ml-forecasting-energy-demand-end2end.ipynb* Notebook also located in the my [practical-machine-learning](https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning) project.
 
+This Notebook is organized a little differently than the other three we worked with. All of the Azure set up is moved to the top, so simply run through all of those until you get to the *Data* section, which is where the book picks up. We read the data set directly from the project instead of getting it from the URL first, because I have already included it in the project (see *Figure 6*). After that step you should recognize all of the code snippets from the book and be able to follow along seamlessly.
 
+{{< imgproc azure-pml-6 Resize "650x" "Azure ML 6" "Figure 6" />}}
+
+That wraps up Chapter 4 on feature engineering.
 
 ### Deploying Automated Machine Learning Models
 
-### Classification and Regression
+My experience was that deploying the model from the example in Chapter 5 was challenging. The good news is that this chapter points you to a [Notebook you can use to follow along](https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_5_Model_Deployment.ipynb). The bad is that I had trouble creating the image in that Notebook. I mostly encountered errors installing *'psutil'* due to *'gcc'* not being found whenever I tried to include the azureml-train-automl (which is required to run the image and score with the model). You are welcome to try their example, but I created my own version: *Chap_5_Model_Deployment.ipynb* in the [practical-machine-learning](https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning) project using the [recommended Model.Deploy() approach](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment) and everything seemed to work. Best I can tell this is due to the base image that is used, but I could be wrong about that.
+
+Something else to note about his chapter: at this point we are creating Container Registries and Container Instances, which cost more than the other resources we have been using so far. The AzureML SDK will create a registry for your Machine Learning workspace if one does not already exist. So, you don't need to explicitly create one. However, if you are using this resource simply to learn, then you might want to delete the Container Registry when you are done (or if you plan to leave it idle for a few days).
+
+The problem with this approach is that your Machine Learning workspace will retain a reference to that original registry. So, future attempts to create images with the SDK will fail because it will not be able to find the registry you deleted. However, with a little preparation you can avoid this. For me, I downloaded the template for my registry before I deleted it. You can accomplish this with the *Export Template* option in the *Settings* section of the container registries blade as seen in *Figure 7*.
+
+{{< imgproc azure-pml-7 Resize "650x" "Azure ML 7" "Figure 7" />}}
+
+Once you have downloaded the template, it is easy to recreate the registry. You can run the following two commands in an Azure Cloud Shell powershell session to delete the registry and recreate it from the template respectively. (I will update the template file to the clouds hell to make it easier to reference and reuse it.)
+
+``` python
+az acr delete -n <registry-name>
+New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile <path-to-template>
+```
+
+But wait, we aren't done. When you drop the registry and re-add it, you lose all the keys needed to access it. Fortunately the Azure ml cli has a command to resync your workspace. Again, this is easily run from an Azure Cloud Shell powershell session. If you have not installed the ml cli yet, then you first need to add that extension. After that it is one command to sync everything up again. (The *sync-keys* command is also helpful if you regenerate passwords for your container registry. Anytime you have trouble with the parts of your workspace communicating, running it might help.)
+
+``` python
+az extension add --name azure-cli-ml
+az ml workspace sync-keys -g practical-ml-rg --subscription-id 3b825558-5a02-405c-ad03-c83db8f38b89 -w auto-ml
+```
+
+You could probably avoid the above by [using the REST APIs to manage Machine Learning Service workspace data](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-export-delete-data). But I have not got to that yet.

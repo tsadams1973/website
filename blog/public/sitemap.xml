@@ -3,26 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</loc>
-    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
-    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-practical-ml-book/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
-    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/ai/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/</loc>
-    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/machine-learning/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/fractional-resource-allocations/</loc>
+    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -61,12 +84,6 @@
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/az-300/</loc>
-    <lastmod>2019-10-19T10:39:40-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
     <lastmod>2019-10-19T10:39:40-04:00</lastmod>
     <priority>0</priority>
   </url>

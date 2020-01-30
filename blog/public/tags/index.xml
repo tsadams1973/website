@@ -6,10 +6,37 @@
     <description>Recent content in Tags on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ai</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/ai/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/azure/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/machine-learning/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/machine-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>management</title>
@@ -53,15 +80,6 @@
       <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
       
       <guid>https://timblog.z19.web.core.windows.net/tags/az-300/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>azure</title>
-      <link>https://timblog.z19.web.core.windows.net/tags/azure/</link>
-      <pubDate>Sat, 19 Oct 2019 10:39:40 -0400</pubDate>
-      
-      <guid>https://timblog.z19.web.core.windows.net/tags/azure/</guid>
       <description></description>
     </item>
     

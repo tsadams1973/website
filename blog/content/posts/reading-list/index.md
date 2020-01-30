@@ -10,7 +10,14 @@ tags: ["books", "articles", "reading"]
 Good books.
 
 * [The Goal (Graphic Novel)](https://www.amazon.com/Goal-Business-Graphic-Novel/dp/0884272079) - Eliyahu M. Goldratt
+* [Systems Thinking for Social Change](https://www.chelseagreen.com/product/systems-thinking-for-social-change/) - David Stroh
+* [Leaders - Myth and Reality](https://www.penguinrandomhouse.com/books/565887/leaders-by-general-stanley-mcchrystal/) - Stanley McChrystal, Jeff Eggers and Jay Mangone
+* [Team of Teams](https://www.mcchrystalgroup.com/insights-2/teamofteams/) - Stanley McChrystal, Chris Fussell and Tantum Collins
+* [Extreme Ownership](https://echelonfront.com/extreme-ownership/) - Jocko Willink and Leif Babin
+* [The Dichotomy of Leadership](https://echelonfront.com/dichotomy-of-leadership/) - Jocko Willink and Leif Babin
 * [FIRE: How Fast, Inexpensive, Restrained, and Elegant Methods Ignite Innovation](https://www.amazon.com/FIRE-Inexpensive-Restrained-Elegant-Innovation/dp/006230190X) - Dan Ward
-* [Fieldguide to understanding human error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648257) - Sidney Dekker
+* [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648257) - Sidney Dekker
 * [Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339/) - Nicole Forsgren
 * [Escaping the Build Trap: How Effective Product Management Creates Real Value](https://www.amazon.com/Escaping-Build-Trap-Effective-Management/dp/149197379X) - Melissa Perri
+* [Switch](https://heathbrothers.com/books/switch/) - Chip Heath and Dan Heath
+* [Quiet](https://www.quietrev.com/quiet-the-book/) - Susan Cain

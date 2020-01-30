@@ -137,16 +137,6 @@ Reporting library was developed with mainframe SAS. Ancillary reports written wi
 
 ---
 
-### VOLUNTEER WORK
-
-**Brigade Member**  
-Code for Tampa Bay - Tampa, FL - codefortampabay.org  
-April 2019 - Present
-
-*Part of Code for America, the Code for Tampa Bay Brigade is a network of people committed to using their voices and hands, in collaboration with local government, to make their city better.*
-
----
-
 ### SPEAKING AND PRESENTATIONS
 
 *“What comes next? Wardley Mapping in 5 Minutes”*  
