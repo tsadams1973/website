@@ -273,11 +273,11 @@
 
 <h3 id="deploying-automated-machine-learning-models">Deploying Automated Machine Learning Models</h3>
 
-<p>My experience was that deploying the model from the example in Chapter 5 was challenging. The good news is that this chapter points you to a <a href="https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_5_Model_Deployment.ipynb">Notebook you can use to follow along</a>. The bad is that I had trouble creating the image in that Notebook. I mostly encountered errors installing <em>&lsquo;psutil&rsquo;</em> due to <em>&lsquo;gcc&rsquo;</em> not being found whenever I tried to include the azureml-train-automl (which is required to run the image and score with the model). You are welcome to try their example, but I created my own version: <em>Chap_5_Model_Deployment.ipynb</em> in the <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project using the <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment">recommended Model.Deploy() approach</a> and everything seemed to work. Best I can tell this is due to the base image that is used, but I could be wrong about that.</p>
+<p>My experience was that deploying the model from the example in Chapter 5 was challenging. The good news is that this chapter points you to a <a href="https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_5_Model_Deployment.ipynb">Notebook you can use to follow along</a>. The bad is that I had trouble creating the image in that Notebook. I mostly encountered errors installing <em>&lsquo;psutil&rsquo;</em> due to <em>&lsquo;gcc&rsquo;</em> not being found whenever I tried to include azureml-train-automl (which is required to run the image and score with the model). You are welcome to try their example, but I created my own version: <em>Chap_5_Model_Deployment.ipynb</em> in the <a href="https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning">practical-machine-learning</a> project using the <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment">recommended Model.Deploy() approach</a> and everything seemed to work. Best I can tell this is due to the base image that is used, but I could be wrong about that.</p>
 
 <p>Something else to note about his chapter: at this point we are creating Container Registries and Container Instances, which cost more than the other resources we have been using so far. The AzureML SDK will create a registry for your Machine Learning workspace if one does not already exist. So, you don&rsquo;t need to explicitly create one. However, if you are using this resource simply to learn, then you might want to delete the Container Registry when you are done (or if you plan to leave it idle for a few days).</p>
 
-<p>The problem with this approach is that your Machine Learning workspace will retain a reference to that original registry. So, future attempts to create images with the SDK will fail because it will not be able to find the registry you deleted. However, with a little preparation you can avoid this. For me, I downloaded the template for my registry before I deleted it. You can accomplish this with the <em>Export Template</em> option in the <em>Settings</em> section of the container registries blade as seen in <em>Figure 7</em>.</p>
+<p>The problem with this approach is that your Machine Learning workspace will retain a reference to that original registry. So, future attempts to create images with the SDK will fail because it will not be able to find the registry you deleted. However, with a little preparation you can avoid this. For me, I downloaded the template for my registry before I deleted it. You can accomplish this with the <em>Export Template</em> option in the <em>Settings</em> section of the container registry blade as seen in <em>Figure 7</em>.</p>
 
 
 
@@ -304,13 +304,77 @@
 </figure>
 
 
-<p>Once you have downloaded the template, it is easy to recreate the registry. You can run the following two commands in an Azure Cloud Shell powershell session to delete the registry and recreate it from the template respectively. (I will update the template file to the clouds hell to make it easier to reference and reuse it.)</p>
+<p>Once you have downloaded the template, it is easy to recreate the registry. You can run the following two commands in an Azure Cloud Shell powershell session. The first will delete the registry while the second will recreate it from the template you specify. I upload the template file to the cloud shell to make it easier to reference and reuse.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">az acr delete -n &lt;registry-name&gt;
 New-AzResourceGroupDeployment -ResourceGroupName &lt;resource-group-name&gt; -TemplateFile &lt;path-to-template&gt;</code></pre></div>
-<p>But wait, we aren&rsquo;t done. When you drop the registry and re-add it, you lose all the keys needed to access it. Fortunately the Azure ml cli has a command to resync your workspace. Again, this is easily run from an Azure Cloud Shell powershell session. If you have not installed the ml cli yet, then you first need to add that extension. After that it is one command to sync everything up again. (The <em>sync-keys</em> command is also helpful if you regenerate passwords for your container registry. Anytime you have trouble with the parts of your workspace communicating, running it might help.)</p>
+<p>One last detail: if you drop the registry and re-add it, you will lose all the keys necessary to access it. Fortunately the Azure ml cli has a command to fix this: <em>sync-keys</em>. This is also easily run from an Azure Cloud Shell powershell session. If you have not yet installed the ml cli, then you first need to add that extension. You can see both commands below. (The <em>sync-keys</em> command is also helpful if you regenerate passwords for your container registry. Basically anytime the components of your workspace have trouble communicating, give this command a go.)</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">az extension add --name azure-cli-ml
 az ml workspace sync-keys -g practical-ml-rg --subscription-id 3b825558-5a02-405c-ad03-c83db8f38b89 -w auto-ml</code></pre></div>
-<p>You could probably avoid the above by <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-export-delete-data">using the REST APIs to manage Machine Learning Service workspace data</a>. But I have not got to that yet.</p>
+<p>You could probably avoid the above by <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-export-delete-data">using the REST APIs to manage Machine Learning Service workspace data</a>. But I have yet to work much with it.</p>
+
+<p>With that out of the way, we can quickly review the chapter. It picks up right at the point where you run the AutoML experiment. It then shows you how to register the model with Azure and retrieve its identifier. The book also includes a quick code snippet that shows how to register a model that you retrieve from an external source. In this case that model is the MNIST Handwritten Digit Recognition ONNX model. I&rsquo;ve included that example in my Notebook for completeness.</p>
+
+<p>After this, the book demonstrates how to create the <em>score.py</em> file used to create the container image. There are some minor discrepancies between the text in the book, the example code shown, and the notebook, but these are minor and do not effect the result. After that step we look at the dependencies from our experiment and print them out along with their version numbers. At this point my Notebook diverges from the book.</p>
+
+<p>I run the same code found in the book to substitute the actual model id into the <em>score.py</em> file, but rather than creating a <em>yaml</em> file for the conda dependencies, I follow the <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment">example</a> that I linked earlier to create my environment and dependencies:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">from</span> azureml.core.model <span style="color:#00f">import</span> InferenceConfig
+<span style="color:#00f">from</span> azureml.core.environment <span style="color:#00f">import</span> Environment
+<span style="color:#00f">from</span> azureml.core.conda_dependencies <span style="color:#00f">import</span> CondaDependencies
+
+<span style="color:#008000"># Create the environment</span>
+myenv = Environment(name=<span style="color:#a31515">&#34;myenv&#34;</span>)
+
+<span style="color:#008000"># Enable Docker and reference an image</span>
+myenv.docker.enabled = True
+
+myenv.inferencing_stack_version=<span style="color:#a31515">&#39;latest&#39;</span>
+
+conda_dep = CondaDependencies.create(conda_packages=[<span style="color:#a31515">&#39;numpy&#39;</span>,<span style="color:#a31515">&#39;scikit-learn&#39;</span>,<span style="color:#a31515">&#39;lightgbm&#39;</span>], 
+                                     pip_packages=[<span style="color:#a31515">&#39;azureml-defaults&#39;</span>,<span style="color:#a31515">&#39;azureml-sdk[automl]&#39;</span>,<span style="color:#a31515">&#39;azureml-train-automl&#39;</span>,<span style="color:#a31515">&#39;pynacl==1.2.1&#39;</span>])
+myenv.python.conda_dependencies=conda_dep
+
+inference_config = InferenceConfig(entry_script=script_file_name, environment=myenv)
+
+myenv.save_to_directory(<span style="color:#a31515">&#39;.&#39;</span>,True)
+conda_dep.save_to_file(<span style="color:#a31515">&#39;.&#39;</span>)</code></pre></div>
+<p>Using that configuration, we deploy the model as seen below. Be aware this can take a long time.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">from</span> azureml.core.webservice <span style="color:#00f">import</span> AciWebservice
+
+service_name = <span style="color:#a31515">&#39;automl-pred-maint-inf&#39;</span>
+
+<span style="color:#008000"># deploy the model</span>
+aci_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
+aci_service = Model.deploy(workspace=ws,
+                       name=service_name,
+                       models=[model],
+                       inference_config=inference_config,
+                       deployment_config=aci_config,
+                       overwrite=True)
+aci_service.wait_for_deployment(show_output=True)
+<span style="color:#00f">print</span>(aci_service.state)</code></pre></div>
+<p>After those two steps, we pick up with the book again where it prints out the URI for the scoring function. The section on <strong>Testing a Deployed Model</strong> should work the same between the two, with only some minor differences in the code.</p>
+
+<p>The next section of the book, <strong>Deploying to AKS</strong>, takes the same model we just pushed to ACI and shows how to deploy it to an AKS cluster. This is not included in the original Notebook, but I added this section to mine. To be consistent, I used the same <em>Model.deploy()</em> approach to push to AKS, versus the image deployment they use in the chapter, but the result should be the same:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">from</span> azureml.core.webservice <span style="color:#00f">import</span> AksWebservice, Webservice
+<span style="color:#00f">from</span> azureml.core.model <span style="color:#00f">import</span> Model
+
+aks_target = AksCompute(ws,<span style="color:#a31515">&#34;myaks&#34;</span>)
+
+<span style="color:#008000"># deploy the model</span>
+deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
+aks_service = Model.deploy(ws, 
+                           <span style="color:#a31515">&#34;myservice&#34;</span>, 
+                           [model], 
+                           inference_config, 
+                           deployment_config, 
+                           aks_target)
+aks_service.wait_for_deployment(show_output = True)
+<span style="color:#00f">print</span>(aks_service.state)</code></pre></div>
+<p>This was the first time I had done anything with AKS in this subscription, so I had some initial trouble creating the AKS cluster. The <a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-azure-kubernetes-service#create-a-new-aks-cluster">important note here</a> mentions that you need to choose an agent count and vm size that works out to at least 12 virtual CPUs. However, I had a quota on my subscription for that region that was limiting it to 10 virtual cores. I was able to request an increase to that limit through Microsoft support, which removed that obstacle. So, if you encounter the same trouble, don&rsquo;t be alarmed.</p>
+
+<p>The chapter continues with <strong>Swagger Documentation for the Web Service</strong>. It walks you through how to add decorators to the <em>score.py</em> file we have been using in order to generate Swagger documentation for the API. Since the chapter includes a <a href="https://github.com/dcstwh/AzureMachineLearningAutoMLBook/blob/master/examples/swagger.json">link</a> to the github repository with the resulting <em>swagger.json</em> file in it, you should be able to follow along.</p>
+
+<p>Chapter 5 wraps up with some helpful advice on how to debug service failures, and with that it is on to the next.</p>
 
 		</div></div>
 	<div class="footer wrapper">

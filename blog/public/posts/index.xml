@@ -63,15 +63,6 @@ Monitoring Azure Monitor provides tools to collect and analyze telemetry data to
     </item>
     
     <item>
-      <title>Using custom middleware to handle MsalUiRequired exceptions.</title>
-      <link>https://timblog.z19.web.core.windows.net/posts/msal-session-vc/</link>
-      <pubDate>Mon, 05 Aug 2019 20:17:00 -0400</pubDate>
-      
-      <guid>https://timblog.z19.web.core.windows.net/posts/msal-session-vc/</guid>
-      <description>If you are using Microsoft Azure AD or Azure AD B2C as part of your IAM solution, odds are you are also using the Microsoft Authentication Library, MSAL.NET, to help you manage your tokens. This convenient library helps you acquire tokens that you can use to access APIs protected by Azure AD. It is useful and will save you a lot of time, but is not without its limitations.</description>
-    </item>
-    
-    <item>
       <title>API Versioning in ASP.NET Core</title>
       <link>https://timblog.z19.web.core.windows.net/posts/api-ver/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
