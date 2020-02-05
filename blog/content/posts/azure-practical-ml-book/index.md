@@ -9,13 +9,20 @@ tags: ["azure","machine learning","ai"]
 
 I picked up [this book](http://shop.oreilly.com/product/0636920269885.do) to learn more about machine learning on Azure. While it is a good book, and one I would recommend, I found some of the hands-on sections challenging. I put together some resources to help anyone else that experiences those same difficulties. If you are reading this, then that might be you.
 
-I thought Part I. of the book, an overview of machine learning and explanation of how it works, was clear. However, getting into the good stuff in Part II. Automated ML on Azure, I felt the authors jumped into some examples without always providing clear direction on where to get the sample code. As I figured that out and worked through the chapters, I put together some notes and resources that I think better match up with the content of the book. I have included those below, organized by chapter title.
+I thought Part I., **Automated MachineLearning**, of the book, an overview of machine learning and explanation of how it works, was clear. However, getting into the good stuff in Part II. **Automated ML on Azure**, I felt the authors jumped into some examples without always providing clear direction on where to get the sample code. As I figured that out and worked through the chapters, I put together some notes and resources that I think better match up with the content of the book. I have included those below, organized by chapter title:
+
+* [Chapter 3 - Getting Started with Microsoft Azure Machine Learning and Automated ML](#one)
+* [Chapter 4 - Feature Engineering and Automated Machine Learning](#two)
+* [Chapter 5 - Deploying Automated Machine Learning Models](#three)
+* [Chapter 6 - Classification and Regression](#four)
 
 This all assumes you already have an Azure subscription set up.
 
 ---
 
-### Getting Started with Microsoft Azure Machine Learning nad Automated ML
+## Part II. Automated ML on Azure
+
+### Getting Started with Microsoft Azure Machine Learning and Automated ML {#one}
 
 After a brief introduction, this chapter jumps right into Azure to set up a machine learning environment. It starts by asking us to register resources providers for those services (found in the *Settings* section of your subscription). This is the first discrepancy I found. The book tells us to search for *'machinelearning'*, and to register the following:
 
@@ -46,7 +53,7 @@ Also, the AutoMLConfig step will likely throw a warning about the inputs being d
 
 Other than that, you should be able to run the notebook and follow along with the book.
 
-### Feature Engineering and Automated Machine Learning
+### Feature Engineering and Automated Machine Learning {#two}
 
 Chapter 4 talks about preprocessing and feature engineering with Azure Machine Learning and wastes no time jumping into some examples. It also presupposes that you have a Jupyter notebook set up to work through the Nasa Predictive Maintenance sample. I put together a Notebook in my [practical-machine-learning](https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning) project to help with this: *Chap_4_Predictive_maintenance_NASA_sample.ipynb*.
 
@@ -72,7 +79,7 @@ This Notebook is organized a little differently than the other three we worked w
 
 That wraps up Chapter 4 on feature engineering.
 
-### Deploying Automated Machine Learning Models
+### Deploying Automated Machine Learning Models {#three}
 
 My experience was that deploying the model from the example in Chapter 5 was challenging. The good news is that this chapter points you to a [Notebook you can use to follow along](https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_5_Model_Deployment.ipynb). The bad is that I had trouble creating the image in that Notebook. I mostly encountered errors installing *'psutil'* due to *'gcc'* not being found whenever I tried to include azureml-train-automl (which is required to run the image and score with the model). You are welcome to try their example, but I created my own version: *Chap_5_Model_Deployment.ipynb* in the [practical-machine-learning](https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning) project using the [recommended Model.Deploy() approach](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-deployment) and everything seemed to work. Best I can tell this is due to the base image that is used, but I could be wrong about that.
 
@@ -173,3 +180,15 @@ This was the first time I had done anything with AKS in this subscription, so I 
 The chapter continues with **Swagger Documentation for the Web Service**. It walks you through how to add decorators to the *score.py* file we have been using in order to generate Swagger documentation for the API. Since the chapter includes a [link](https://github.com/dcstwh/AzureMachineLearningAutoMLBook/blob/master/examples/swagger.json) to the github repository with the resulting *swagger.json* file in it, you should be able to follow along.
 
 Chapter 5 wraps up with some helpful advice on how to debug service failures, and with that it is on to the next.
+
+### Classification and Regression {#four}
+
+Chapter 6 starts out covering some machine learning fundamentals, particularly the differences between classification and regression as machine learning techniques as well as the types of problems they are intended to solve. It wastes no time introducing the German Credit Risk data set that is used for the classification problem (identifying credit risks) it uses as an example.
+
+In a couple pages it will point out where to get the [sample Notebook](https://github.com/PracticalAutomatedMachineLearning/Azure/blob/master/notebook/Chap_6_Classification.ipynb) for the chapter. As with previous chapters, I've included that Notebook with some minor modifications to make it easier to follow along with in my [practical-machine-learning](https://notebooks.azure.com/tsa-adams/projects/practical-machine-learning) project. It is named *Chap_6_Classification.ipynb*.
+
+If you want to run the German credit risk code snippet, just scroll about a quarter of the way down the Notebook. It is the first cell in the **Data Preparation* section. All this really does is give you a quick view of the data we will be working with for this example.
+
+After some more foundational discussion about classification and regression algorithms, the chapter has a section on **Setting up the Azure Machine Learning workspace** meant to walk you through configuring the sample Notebook. I rewrote the **Preparing the Azure Machine Learning Workspace** of the Notebook in my project to set everything up the way we have with all of the other Notebooks so far. So, this section will not be aligned between the book and the Notebook, but running through the steps should leave you in the same place by the time the **Data Preparation** section begins.
+
+For the rest of the chapter, we walk through reading the data set and examining it before training models with automated ML, selecting the best model, and testing it. All of the steps from the chapter are included in the sample notebook, so it should be easy to follow along. One note: in the book, they set the number of iterations at 30 in the AutoML config. I've changed that back to 10 in the interest of saving some time. Also, the example notebook on github had some additional steps in it for looking at the data which I've left in my Notebook. So, everything from the chapter is in the Notebook, but there is some bonus code as well.

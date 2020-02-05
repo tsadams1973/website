@@ -6,7 +6,7 @@
     <description>Recent content in Tags on iconic sections</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://timblog.z19.web.core.windows.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>ai</title>
       <link>https://timblog.z19.web.core.windows.net/tags/ai/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://timblog.z19.web.core.windows.net/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datascience</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/datascience/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/datascience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deeplearning</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/deeplearning/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/deeplearning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machinelearning</title>
+      <link>https://timblog.z19.web.core.windows.net/tags/machinelearning/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/tags/machinelearning/</guid>
       <description></description>
     </item>
     
