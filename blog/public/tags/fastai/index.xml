@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fastai on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/fastai/</link>
+    <description>Recent content in fastai on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/fastai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tampa Artificial Intelligence Meetup</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/fast-ai-open-competitions/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/fast-ai-open-competitions/</guid>
+      <description>This week I attended an event put on by the Tampa Artificial Intelligence Meetup entitled &amp;ldquo;Finding State of the Art Techniques through Open Competitions&amp;rdquo;. It was a smaller event, with maybe 7 people attending, but welcoming, accessible, and informative.
+The organizer, Scott Mueller, gave a presentation introducing us (maybe only me?) to fast.ai and how to use machine learning algorithms to solve different image recognition problems. You can find the slides here.</description>
+    </item>
+    
+  </channel>
+</rss>
