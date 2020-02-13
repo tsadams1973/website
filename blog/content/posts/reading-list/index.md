@@ -9,6 +9,7 @@ tags: ["books", "articles", "reading"]
 
 Good books.
 
+* [Practical Automated Machine Learning on Azure](http://shop.oreilly.com/product/0636920269885.do) - Wee Hyong Tok, Deepak Mukunthu, and Parashar Shah
 * [The Goal (Graphic Novel)](https://www.amazon.com/Goal-Business-Graphic-Novel/dp/0884272079) - Eliyahu M. Goldratt
 * [Systems Thinking for Social Change](https://www.chelseagreen.com/product/systems-thinking-for-social-change/) - David Stroh
 * [Leaders - Myth and Reality](https://www.penguinrandomhouse.com/books/565887/leaders-by-general-stanley-mcchrystal/) - Stanley McChrystal, Jeff Eggers and Jay Mangone
@@ -19,5 +20,6 @@ Good books.
 * [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648257) - Sidney Dekker
 * [Accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339/) - Nicole Forsgren
 * [Escaping the Build Trap: How Effective Product Management Creates Real Value](https://www.amazon.com/Escaping-Build-Trap-Effective-Management/dp/149197379X) - Melissa Perri
+* [The Manager's Path](http://shop.oreilly.com/product/0636920056843.do) - Camille Fournier
 * [Switch](https://heathbrothers.com/books/switch/) - Chip Heath and Dan Heath
 * [Quiet](https://www.quietrev.com/quiet-the-book/) - Susan Cain
