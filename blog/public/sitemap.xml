@@ -3,14 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://timblog.z19.web.core.windows.net/posts/azure-ai-vision/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/</loc>
-    <lastmod>2020-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/</loc>
-    <lastmod>2020-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/ai/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/cognitiveservices/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/python/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://timblog.z19.web.core.windows.net/tags/vision/</loc>
+    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -20,19 +61,7 @@
   </url>
   
   <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/ai/</loc>
-    <lastmod>2020-02-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://timblog.z19.web.core.windows.net/tags/fastai/</loc>
-    <lastmod>2020-02-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/</loc>
     <lastmod>2020-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -81,12 +110,6 @@
   <url>
     <loc>https://timblog.z19.web.core.windows.net/posts/azure-practical-ml-book/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timblog.z19.web.core.windows.net/tags/azure/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

@@ -81,7 +81,6 @@ Name your rule "Redirect http to https". Configure it by setting "If" "Request S
 
 Hit "Add". Give Azure some time to propagate your changes, and that is it. You should be done.
 
-
 ---
 
 Congratulations. Now you should have your own static website running in Azure blob storage, and you should also have it mapped to the custom domain of your choice, with an SSL certificate, and some rewrite rules to provide a pleasant user experience.

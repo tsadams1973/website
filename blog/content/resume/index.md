@@ -7,11 +7,9 @@ description: ""
 ---
 
 **Timothy Adams**  
-Job Type: *Permanent*  
-Work Schedule: *Full-Time*  
-Desired locations: *United States – FL or Remote*
+Desired locations: *United States – Tampa, FL or Remote*
 
-## WORK EXPERIENCE
+### WORK EXPERIENCE
 
 ---
 
@@ -21,7 +19,7 @@ January 2018 to December 2019 - Hours per week: 40
 
 *The mission of the Health Informatics Institute is to support the study, prevention, and treatment of diseases in a comprehensive and interdisciplinary fashion by establishing expertise in biomedical science, software and data engineering, and integrative bioinformatics. Its research is focused on the prevention of diabetes and other autoimmune diseases, cancer prevention and control, genetic disorders, and rare diseases.*
 
-#### DUTIES AND RESPONSIBILITIES: 
+#### DUTIES AND RESPONSIBILITIES
 
 *Reporting to the Lead Architect, lead efforts to integrate new technologies, processes, and tools with existing practices in order to improve product offerings, software quality, and delivery cycle times. Supported the IT governance process. Created prototypes as proofs-of-concept for novel ideas.*
 
@@ -36,7 +34,8 @@ January 2018 to December 2019 - Hours per week: 40
 * Support project teams in the incorporation and use of recommended HII technologies. Regularly presented tech talks to IT team.
 * Kept abreast of and evaluated new technologies.
 
-#### TECHNICAL SKILLS: 
+#### TECHNICAL SKILLS
+
 Visual Studio Code. Presented a series of talks on OAuth 2.0 to the IT department using IdentityServer4, Azure AD, and Azure AD B2C for examples. Created custom policies for Azure B2C to integrate with custom APIs and a federated Azure AD identity provider. Incorporated MSAL.NET library into .NET Core MVC and Web API projects to manage tokens. Built cross-platform mobile app with the Ionic framework using Angular. Deployed to Apple store using XCode. Used Ionic CLI and Google play to deploy for Android. Presented a tech talk on testing. Wrote tests with Postman and Selenium. Used Newman to run Postman tests in Azure DevOps release pipelines. Worked on a team that used Slack, GoToMeeting, Azure Boards, MS Office, and Google Docs.
 
 ---
@@ -45,7 +44,7 @@ Visual Studio Code. Presented a series of talks on OAuth 2.0 to the IT departmen
 University of South Florida, Health Informatics Institute – Tampa, FL  
 November 2014 to January 2018 - Hours per week: 40  
 
-#### DUTIES AND RESPONSIBILITIES:
+#### DUTIES AND RESPONSIBILITIES
 
 *Reporting to the CIO, developed and communicated the HII technology strategy. Worked with customers and key stakeholders to identify their needs and lead the development efforts to meet those needs. Established teams, created project plans, and managed the delivery of features supporting global clinical trial management systems. Responsible for hiring and performance management.*
 
@@ -60,16 +59,17 @@ November 2014 to January 2018 - Hours per week: 40
 * Pushed code to production 100+ times per year to support the more than 20 software applications used by the global research networks that are our clients. 
 * Established a remote work policy allowing members of the software engineering team to work from home.
 
-#### TECHNICAL SKILLS: 
+#### TECHNICAL SKILLS
 
 Developed studies in REDCap. Administered surveys using Qualtrics. Used Azure Boards and MS Project extensively to manage project delivery. Supported remote work using slack and GoToMeeting.
-___
+
+---
 
 **Assistant Director, Solutions Development**  
 University of South Florida, Health Informatics Institute – Tampa, FL  
 October 2013 to November 2014 - Hours per week: 40
 
-#### DUTIES AND RESPONSIBILITIES:
+#### DUTIES AND RESPONSIBILITIES
 
 *Reporting to the Associate Director of Software Engineering, worked with researchers to identify the requirements for their studies and provided solutions meeting those requirements. Communicated with the quality assurance, operations, and data teams to coordinate delivery.*
 
@@ -82,7 +82,7 @@ October 2013 to November 2014 - Hours per week: 40
 * Worked with the team to implement scrum and Kanban processes.
 * Started a practice of quarterly review between IT and key stakeholders to review progress and effort allocations to ensure alignment with the organizations mission.
 
-#### TECHNICAL SKILLS: 
+#### TECHNICAL SKILLS
 
 Used Tableau to analyze and communicate team metrics. Created presentations with MS PowerPoint and Prezi. Defects were tracked with HPQC. Built SharePoint sites, custom lists, and templates.
 
@@ -92,7 +92,7 @@ Used Tableau to analyze and communicate team metrics. Created presentations with
 University of South Florida, Health Informatics Institute – Tampa, FL  
 January 2006 to October 2013 - Hours per week: 40
 
-#### DUTIES AND RESPONSIBILITIES:
+#### DUTIES AND RESPONSIBILITIES
 
 *Work with clinical research associates assigned to research studies to understand study requirements and implement them. Full stack development building and maintaining clinical trial management systems.*
 
@@ -107,7 +107,7 @@ January 2006 to October 2013 - Hours per week: 40
 * Worked on a windows form-based contact registry application and campaign manager that allowed consortia in the RDN to push out template-based e-mails to registrants that matched their criteria. 
 * Mentored new employees
 
-#### TECHNICAL SKILLS: 
+#### TECHNICAL SKILLS
 
 Built all software using Microsoft .Net framework and C#. Most projects were ASP.NET web forms with some MVC projects. WCF Web Services. Used Speech Server 2007 to create IVR applications. All applications were built on Oracle databases. PL/SQL Developer. Visual Studio.
 
@@ -119,7 +119,7 @@ December 1995 to January 2006 - Hours per week: 40
 
 *The Office of Decision Support facilitates strategic planning and decision-making at USF by coordinating data analysis, business solutions, and reporting across the USF System.*
 
-#### DUTIES AND RESPONSIBILITIES:
+#### DUTIES AND RESPONSIBILITIES
 
 *Support all reporting activities for USF. Ensure governance of data assets. Provide timely and accurate data to senior university leadership.*
 
@@ -131,7 +131,7 @@ December 1995 to January 2006 - Hours per week: 40
 * Web master for department. 
 * Developed enrollment projections, wrote technical reports, responded to surveys. Created spreadsheets, responded to ad hoc requests, maintained/updated report library at benchmarks.
 
-#### TECHNICAL SKILLS: 
+#### TECHNICAL SKILLS
 
 Reporting library was developed with mainframe SAS. Ancillary reports written with PC SAS. Built data marts in SQL Server.  Created websites with classic ASP, ASP.Net, HTML, CSS, vbscript, Visual Basic, and VB.Net. Worked with XML, and XSL, and built some SOAP web services.
 
@@ -158,7 +158,6 @@ Earned October 2017
 
 **Joint SAS/USF Certificate in Analytics and Business Intelligence**  
 Earned December 2014
-
 
 ---
 

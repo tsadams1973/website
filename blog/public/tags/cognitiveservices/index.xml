@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cognitiveservices on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/cognitiveservices/</link>
+    <description>Recent content in cognitiveservices on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/cognitiveservices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computer Vision using Azure Cognitive Services</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/azure-ai-vision/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/azure-ai-vision/</guid>
+      <description>As part of my effort to learn more about artificial intelligence, machine learning, and Azure, I have been reading Deep Learning with Azure. Having just finished Part II: Azure AI Platform and Experimentation Tools, I thought I might write up my experiences working with computer vision and custom vision while they are still fresh in my mind.
+Despite the majority of my professional programming experience being in C#, I decided to use Python to work through the examples.</description>
+    </item>
+    
+  </channel>
+</rss>

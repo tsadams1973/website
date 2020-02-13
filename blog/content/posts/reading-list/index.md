@@ -7,7 +7,7 @@ description: "A running list."
 tags: ["books", "articles", "reading"]
 ---
 
-Good books.
+Good books. And where to find them.
 
 * [Practical Automated Machine Learning on Azure](http://shop.oreilly.com/product/0636920269885.do) - Wee Hyong Tok, Deepak Mukunthu, and Parashar Shah
 * [The Goal (Graphic Novel)](https://www.amazon.com/Goal-Business-Graphic-Novel/dp/0884272079) - Eliyahu M. Goldratt
