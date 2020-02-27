@@ -9,8 +9,10 @@ tags: ["books", "articles", "reading"]
 
 Good books. And where to find them.
 
+* [Range: Why Generalists Triumph in a Specialized World](https://www.penguinrandomhouse.com/books/550188/range-by-david-epstein/) - David Epstein
 * [Practical Automated Machine Learning on Azure](http://shop.oreilly.com/product/0636920269885.do) - Wee Hyong Tok, Deepak Mukunthu, and Parashar Shah
 * [The Goal (Graphic Novel)](https://www.amazon.com/Goal-Business-Graphic-Novel/dp/0884272079) - Eliyahu M. Goldratt
+* [The Phoenix Project](https://itrevolution.com/book/the-phoenix-project/) - Kevin Behr, George Spafford, Gene Kim
 * [Systems Thinking for Social Change](https://www.chelseagreen.com/product/systems-thinking-for-social-change/) - David Stroh
 * [Leaders - Myth and Reality](https://www.penguinrandomhouse.com/books/565887/leaders-by-general-stanley-mcchrystal/) - Stanley McChrystal, Jeff Eggers and Jay Mangone
 * [Team of Teams](https://www.mcchrystalgroup.com/insights-2/teamofteams/) - Stanley McChrystal, Chris Fussell and Tantum Collins
