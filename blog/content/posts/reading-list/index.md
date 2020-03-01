@@ -39,3 +39,9 @@ Good books. And where to find them.
 * [Lean Startup](http://theleanstartup.com/book) - Eric Reis
 * [The Startup Way](http://www.thestartupway.com/) - Eric Reis
 * [Lean Analytics](http://leananalyticsbook.com/) - Alistair Croll, Benjamin Yoskovitz
+* [The Power of Habit](https://charlesduhigg.com/the-power-of-habit/) - Charles Duhigg
+* [Scaling up Excellence](https://www.penguinrandomhouse.com/books/222302/scaling-up-excellence-by-robert-i-sutton-and-huggy-rao/) - Robert Sutton
+* [Joy, Inc.](https://www.penguinrandomhouse.com/books/312832/joy-inc-by-richard-sheridan/) - Richard Sheridan
+* [Scarcity: Why Having Too Little Means So Much](https://www.hks.harvard.edu/centers/cid/publications/books/scarcity-why-having-too-little-means-so-much) - Sendhil Mullainathan, Eldar Shafir
+* [How to Measure Anything](https://www.howtomeasureanything.com/) - Douglas Hubbard
+* [Simply Managing](https://mintzberg.org/books/simply-managing) - Henry Minztberg

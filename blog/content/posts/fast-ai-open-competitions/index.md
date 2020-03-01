@@ -4,7 +4,7 @@ date: 2020-02-06
 draft: false
 type: "post"
 description: "Finding State of the Art Techniques Through Open Competition"
-tags: ["ai","fastai","imagenette","woofnet","wangnet"]
+tags: ["ai","fastai","imagenette","woofnet","wangnet","meetup"]
 ---
 
 This week I attended an event put on by the [Tampa Artificial Intelligence Meetup](https://www.meetup.com/Tampa-Artificial-Intelligence-Meetup) entitled ["Finding State of the Art Techniques through Open Competitions"](https://www.meetup.com/Tampa-Artificial-Intelligence-Meetup/events/268349608/). It was a smaller event, with maybe 7 people attending, but welcoming, accessible, and informative.
