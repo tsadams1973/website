@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c4tb on iconic sections</title>
+    <link>https://timblog.z19.web.core.windows.net/tags/c4tb/</link>
+    <description>Recent content in c4tb on iconic sections</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://timblog.z19.web.core.windows.net/tags/c4tb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code for Tampa Bay</title>
+      <link>https://timblog.z19.web.core.windows.net/posts/code-4-tb/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://timblog.z19.web.core.windows.net/posts/code-4-tb/</guid>
+      <description>This week I finally made it back to the Code for Tampa Bay Meetup. C4TB is a Code for America brigade located in Tampa, FL. I had joined the organization in early 2019 looking to find a way to contribute to our community, but had recently gotten out of the habit of attending. So, when one of the organizers told me they were looking to reboot and redouble their efforts, I felt like it was a good opportunity to try again.</description>
+    </item>
+    
+  </channel>
+</rss>
