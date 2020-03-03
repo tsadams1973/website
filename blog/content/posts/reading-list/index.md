@@ -9,6 +9,8 @@ tags: ["books", "articles", "reading"]
 
 Good books. And where to find them.
 
+* [Weapons of Math Destruction](https://weaponsofmathdestructionbook.com/) - Cathy O'Neil
+* [The Unicorn Project](https://itrevolution.com/the-unicorn-project/) - Gene Kim
 * [Range: Why Generalists Triumph in a Specialized World](https://www.penguinrandomhouse.com/books/550188/range-by-david-epstein/) - David Epstein
 * [Practical Automated Machine Learning on Azure](http://shop.oreilly.com/product/0636920269885.do) - Wee Hyong Tok, Deepak Mukunthu, and Parashar Shah
 * [The Goal (Graphic Novel)](https://www.amazon.com/Goal-Business-Graphic-Novel/dp/0884272079) - Eliyahu M. Goldratt
